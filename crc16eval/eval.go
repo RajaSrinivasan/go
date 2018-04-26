@@ -25,6 +25,21 @@ func EvaluateByte(f string, t string) {
 		fmt.Printf("%4d : 0x%04x\n", evalint, crc)
 	}
 }
+
+func EvaluateWord(f string, t string) {
+	fromval, _ := strconv.ParseUint(f, 10, 16)
+	toval, _ := strconv.ParseUint(t, 10, 16)
+	if verbose {
+		fmt.Printf("Evaluate crc from %d to %d\n", fromval, toval)
+	}
+	var evalint uint16
+	var crc uint16
+	for evalint = uint16(fromval); evalint <= uint16(toval); evalint++ {
+		crc = crc16.UpdateBlock(crc, unsafe.Pointer(&evalint), unsafe.Sizeof(evalint))
+		fmt.Printf("%6d : 0x%04x\n", evalint, crc)
+	}
+}
+
 func main() {
 	flag.BoolVar(&verbose, "verbose", true, "verbose")
 	flag.IntVar(&uint_bits, "bits", 8, "No of bits. 8|16|32|64")
@@ -36,6 +51,7 @@ func main() {
 		EvaluateByte(flag.Arg(0), flag.Arg(1))
 	case 16:
 		fmt.Println("Unsigned word")
+		EvaluateWord(flag.Arg(0), flag.Arg(1))
 	case 32:
 		fmt.Println("Unsigned long")
 	case 64:
