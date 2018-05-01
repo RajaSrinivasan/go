@@ -27,4 +27,17 @@ func main() {
 		test(val)
 	}
 
+	for i := 0; i < flag.NArg()-1; i++ {
+		num1, _ := strconv.Atoi(flag.Arg(i))
+		num2, _ := strconv.Atoi(flag.Arg(i + 1))
+		fmt.Printf("GCD of %d and %d is %d\n", num1, num2, numlib.Gcd(num1, num2))
+	}
+
+	for n1 := 3; n1 < 61; n1 += 2 {
+		for n2 := n1 + 2; n2 < 61; n2 += 2 {
+			if numlib.MutualPrime(n1, n2) {
+				fmt.Printf("%d %d %d %d\n", n1, n2, n1*n2, n2-n1)
+			}
+		}
+	}
 }
