@@ -33,11 +33,22 @@ func main() {
 		fmt.Printf("GCD of %d and %d is %d\n", num1, num2, numlib.Gcd(num1, num2))
 	}
 
-	for n1 := 3; n1 < 61; n1 += 2 {
-		for n2 := n1 + 2; n2 < 61; n2 += 2 {
+	longest := 3
+	var N1 int
+	var N2 int
+
+	for n1 := 3; n1 < 121; n1 += 2 {
+		for n2 := n1 + 2; n2 < 121; n2 += 2 {
 			if numlib.MutualPrime(n1, n2) {
 				fmt.Printf("%d %d %d %d\n", n1, n2, n1*n2, n2-n1)
+				if n1*n2 > longest {
+					N1 = n1
+					N2 = n2
+					longest = N1 * N2
+				}
 			}
 		}
+		fmt.Printf("%d %d %d %d\n", N1, N2, longest, N2-N1)
 	}
+
 }
