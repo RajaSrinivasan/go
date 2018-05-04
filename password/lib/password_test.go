@@ -18,4 +18,5 @@ func TestStore(arg *testing.T) {
 	store.Verify("app" , "creator" , "rsrinivasan","designer")
 	store.Set("app2" , "admin" , "srini" , "lowlife")
 	store.Verify("app2" , "admin" , "srini" , "lowlife")
+	
 }

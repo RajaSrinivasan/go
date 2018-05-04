@@ -42,12 +42,15 @@ func init() {
 
 func (storage *Storage) Set(app string, role string , username string, password string) {
 	fmt.Printf("Set app=%s username=%s password=%s\n", app, username, password)
-
+  var usersalt string
 	sec, err := storage.file.Section(app)
 	if err != nil {
 		sec = storage.file.NewSection(app)
+		usersalt = generateSalt()
+	} else {
+		usersalt = sec.ValueOf("usersalt")
 	}
-  usersalt := generateSalt()
+
 	usernameenc := generateHash( usersalt, username)
 	passwordenc := generateHash( usersalt, password)
 
