@@ -18,7 +18,7 @@ type Storage struct {
 	file     *configparser.Configuration
 }
 
-func GenerateSalt() string {
+func generateSalt() string {
 	timens := int64(time.Now().Nanosecond())
 	src := rand.NewSource(timens)
 	randp := rand.New(src)
@@ -27,7 +27,7 @@ func GenerateSalt() string {
 	return hex.EncodeToString(newsalt)
 }
 
-func GenerateHash(salt string, txt string) string {
+func generateHash(salt string, txt string) string {
     hasher := md5.New()
 		var b []byte
 	  io.WriteString(hasher,salt)
@@ -47,9 +47,9 @@ func (storage *Storage) Set(app string, username string, password string) {
 	if err != nil {
 		sec = storage.file.NewSection(app)
 	}
-  usersalt := GenerateSalt()
-	usernameenc := GenerateHash( usersalt, username)
-	passwordenc := GenerateHash( usersalt, password)
+  usersalt := generateSalt()
+	usernameenc := generateHash( usersalt, username)
+	passwordenc := generateHash( usersalt, password)
 
 	sec.Add("usersalt",usersalt)
 	sec.Add("username",usernameenc)
@@ -70,14 +70,14 @@ func (storage *Storage) Verify(app string, username string, password string) boo
 
 	salt := sec.ValueOf("usersalt")
 	usernameenc := sec.ValueOf("username")
-  checkusernameenc := GenerateHash(salt,username)
+  checkusernameenc := generateHash(salt,username)
 	if usernameenc != checkusernameenc {
 		fmt.Printf("username does not match\n")
 		return false
 	}
 
 	passwordenc := sec.ValueOf("password")
-	checkpasswordenc := GenerateHash(salt,password)
+	checkpasswordenc := generateHash(salt,password)
 	if passwordenc != checkpasswordenc {
 		fmt.Printf("Password does not match\n")
 		return false
