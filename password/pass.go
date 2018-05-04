@@ -12,6 +12,7 @@ var optset bool
 var optver bool
 var config string
 var app string
+var role string
 
 func ShowArguments() {
 	fmt.Printf("Password storage file= %s\n", config)
@@ -26,6 +27,7 @@ func main() {
 	flag.BoolVar(&optset, "set", false, "set the password")
 	flag.BoolVar(&optver, "verify", false, "verify the password")
 	flag.StringVar(&app, "app", "app", "application name")
+	flag.StringVar(&role, "role" , "user" , "role for the user")
 	flag.StringVar(&config, "config", "password.conf", "configuration file")
 
 	flag.Parse()
@@ -43,11 +45,11 @@ func main() {
 
 	pconfig := password.New(config)
 	if optset {
-		pconfig.Set(app, flag.Arg(0), flag.Arg(1))
+		pconfig.Set(app, role, flag.Arg(0), flag.Arg(1))
 	}
 
 	if optver {
-		ver := pconfig.Verify(app, flag.Arg(0), flag.Arg(1))
+		ver := pconfig.Verify(app, role, flag.Arg(0), flag.Arg(1))
 		fmt.Printf("App %s user %s password %s verify %v\n", app, flag.Arg(0), flag.Arg(1), ver)
 	}
 }
