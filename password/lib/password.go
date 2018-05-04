@@ -40,7 +40,7 @@ func init() {
 
 }
 
-func (storage *Storage) Set(app string, username string, password string) {
+func (storage *Storage) Set(app string, role string , username string, password string) {
 	fmt.Printf("Set app=%s username=%s password=%s\n", app, username, password)
 
 	sec, err := storage.file.Section(app)
@@ -52,14 +52,14 @@ func (storage *Storage) Set(app string, username string, password string) {
 	passwordenc := generateHash( usersalt, password)
 
 	sec.Add("usersalt",usersalt)
-	sec.Add("username",usernameenc)
-	sec.Add("password",passwordenc)
+	sec.Add(role + "username",usernameenc)
+	sec.Add(role + "password",passwordenc)
 
-	sec.Add(username, password)
+	sec.Add(role + username, password)
 	configparser.Save(storage.file, storage.filename)
 }
 
-func (storage *Storage) Verify(app string, username string, password string) bool {
+func (storage *Storage) Verify(app string, role string, username string, password string) bool {
 	fmt.Printf("Verify app=%s username=%s password=%s\n", app, username, password)
 
 	sec,err := storage.file.Section(app)
@@ -69,14 +69,14 @@ func (storage *Storage) Verify(app string, username string, password string) boo
 	}
 
 	salt := sec.ValueOf("usersalt")
-	usernameenc := sec.ValueOf("username")
+	usernameenc := sec.ValueOf(role + "username")
   checkusernameenc := generateHash(salt,username)
 	if usernameenc != checkusernameenc {
 		fmt.Printf("username does not match\n")
 		return false
 	}
 
-	passwordenc := sec.ValueOf("password")
+	passwordenc := sec.ValueOf(role + "password")
 	checkpasswordenc := generateHash(salt,password)
 	if passwordenc != checkpasswordenc {
 		fmt.Printf("Password does not match\n")
