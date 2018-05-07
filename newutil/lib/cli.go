@@ -7,6 +7,7 @@ import (
 )
 
 var Verbose bool
+var Filenames bool
 var Template string
 var Output string
 var Macros map[string]string
@@ -15,15 +16,18 @@ var macDefinition *regexp.Regexp
 func parseMacro(arg string) (string,string) {
 
   defn := macDefinition.FindAllStringSubmatch(arg,-1)
-  fmt.Printf("%v macro=%s value=%s\n",defn,defn[0][1],defn[0][2])
+  if Verbose {
+     fmt.Printf("%v macro=%s value=%s\n",defn,defn[0][1],defn[0][2])
+  }
   return defn[0][1] , defn[0][2]
 }
 
 func init() {
 
-  flag.BoolVar( &Verbose , "verbose" , true , "verbose")
+  flag.BoolVar( &Verbose , "verbose" , false , "verbose")
   flag.StringVar( &Template , "template" , "./template" , "template dir")
-  flag.StringVar( &Output , "output" , "./output" , "output dir") 
+  flag.StringVar( &Output , "output" , "./output" , "output dir")
+  flag.BoolVar( &Filenames , "filenames" , false , "rename files with macro table")
   flag.Parse()
   Macros = make(map[string]string)
   macDefinition = regexp.MustCompile("([a-zA-Z][a-zA-Z0-9]*)=([a-zA-Z0-9]+)")
