@@ -2,8 +2,9 @@ package newutil
 
 import (
   "os"
-  "io"
+  //"io"
   "io/ioutil"
+  "bufio"
   "fmt"
   "path"
   "strings"
@@ -19,7 +20,20 @@ func copyFile(from string, to string){
   fmt.Printf("Output file is %s\n",outfilename)
   inpfile,_ := os.Open(from)
   outfile,_ := os.Create(outfilename)
-  io.Copy(outfile,inpfile)
+  scanner := bufio.NewScanner(inpfile)
+  for scanner.Scan() {
+    text:=scanner.Text()
+    if strings.Contains(text,"//$") {
+       newtext := text
+       for k,v := range(Macros) {
+         newtext = strings.Replace(newtext,k,v,-1)
+       }
+       fmt.Fprintf(outfile,"%s\n",newtext)
+    } else {
+       fmt.Fprintf(outfile,"%s\n",scanner.Text())
+    }
+  }
+  //io.Copy(outfile,inpfile)
   outfile.Sync()
   inpfile.Close()
   outfile.Close()
