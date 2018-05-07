@@ -7,11 +7,15 @@ import (
 )
 
 var Verbose bool
+var Version bool
 var Filenames bool
 var Template string
 var Output string
 var Macros map[string]string
 var macDefinition *regexp.Regexp
+
+const MAJOR_VERSION = 0
+const MINOR_VERSION = 1
 
 func parseMacro(arg string) (string,string) {
 
@@ -25,6 +29,7 @@ func parseMacro(arg string) (string,string) {
 func init() {
 
   flag.BoolVar( &Verbose , "verbose" , false , "verbose")
+  flag.BoolVar( &Version , "V" , false , "show version")
   flag.StringVar( &Template , "template" , "./template" , "template dir")
   flag.StringVar( &Output , "output" , "./output" , "output dir")
   flag.BoolVar( &Filenames , "filenames" , false , "rename files with macro table")
@@ -34,6 +39,9 @@ func init() {
   for arg:=0; arg < flag.NArg(); arg++ {
     mac,val := parseMacro(flag.Arg(arg))
     Define(mac,val)
+  }
+  if Version {
+    fmt.Printf("newutil version %02d.%02d\n",MAJOR_VERSION,MINOR_VERSION)
   }
 }
 
