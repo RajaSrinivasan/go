@@ -25,6 +25,6 @@ func main() {
 	fmt.Printf("ssh %v\n", port)
 	port, _ = net.LookupPort("tcp", "https")
 	fmt.Printf("https %v\n", port)
-	port, _ = net.LookupPort("tcp", "rsvp-e2e-ignore")
+	port, _ = net.LookupPort("tcp", "srp")
 	fmt.Printf("rsvp-e2e-ignore %v\n", port)
 }
