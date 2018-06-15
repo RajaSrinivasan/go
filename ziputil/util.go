@@ -100,6 +100,7 @@ func DecryptPackage() {
 	cmd.Run()
 	fmt.Printf("%s", out.String())
 }
+
 func main() {
 	flag.BoolVar(&verbose, "verbose", true, "verbose")
 	flag.StringVar(&packfile, "pack", "", "pack the files into a zip file of this name")
