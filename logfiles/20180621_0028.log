@@ -1,0 +1,2283 @@
+-- Logs begin at Thu 2018-06-07 15:31:49 UTC, end at Thu 2018-06-21 00:28:33 UTC. --
+Jun 20 23:28:02.938631 RL00122 rlc[694]: Firewall log: '[adc]   210   737   749     1   310   147    15   775   371 '
+Jun 20 23:28:14.452149 RL00122 rrdcached[379]: flushing old values
+Jun 20 23:28:15.278943 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:28:15.279012 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:28:15.280429 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:28:15.281309 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:28:15.281364 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:28:15.281396 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:28:15.281759 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 20 23:28:25.117470 RL00122 systemd[1]: periodic_rsync.service: Service hold-off time over, scheduling restart.
+Jun 20 23:28:25.123263 RL00122 systemd[1]: Stopped Period File upload download using rsync.
+Jun 20 23:28:25.126353 RL00122 systemd[1]: Started Period File upload download using rsync.
+Jun 20 23:28:26.056878 RL00122 file_transfer.py[5826]: scp: RL00122/servicepacks/*.apm: No such file or directory
+Jun 20 23:28:26.872424 RL00122 file_transfer.py[5826]: 20180620_2128.log
+Jun 20 23:28:27.300233 RL00122 file_transfer.py[5826]: 20180620_2128stats.log
+Jun 20 23:28:27.302715 RL00122 file_transfer.py[5826]: 20180620_2228.log
+Jun 20 23:28:27.339991 RL00122 file_transfer.py[5826]: 20180620_2228stats.log
+Jun 20 23:28:27.500002 RL00122 file_transfer.py[5826]: sent 175,571 bytes  received 124 bytes  117,130.00 bytes/sec
+Jun 20 23:28:27.501802 RL00122 file_transfer.py[5826]: total size is 1,631,668  speedup is 9.29
+Jun 20 23:28:28.351357 RL00122 file_transfer.py[5826]: sending incremental file list
+Jun 20 23:28:28.353647 RL00122 file_transfer.py[5826]: rsync: link_stat "/var/rlm/outsync/*" failed: No such file or directory (2)
+Jun 20 23:28:28.475770 RL00122 file_transfer.py[5826]: sent 18 bytes  received 12 bytes  20.00 bytes/sec
+Jun 20 23:28:28.477755 RL00122 file_transfer.py[5826]: total size is 0  speedup is 0.00
+Jun 20 23:28:28.479959 RL00122 file_transfer.py[5826]: rsync error: some files/attrs were not transferred (see previous errors) (code 23) at /var/lib/jenkins/workspace/MDevice_Multibranch_rc_v1.3-2RVG7AXPC5PAYG7XFIXOVAXWBARE7OZ56NAE7FIFO4J3PNN27OCQ/yocto_project/build_test/tmp/work/cortexa9hf-vfp-neon-poky-linux-gnueabi/rsync/3.1.1-r0/rsync-3.1.1/main.c(1165) [sender=3.1.1]
+Jun 20 23:28:29.206215 RL00122 file_transfer.py[5826]: rsync: link_stat "/var/rlm/notify/*" failed: No such file or directory (2)
+Jun 20 23:28:29.343378 RL00122 file_transfer.py[5826]: sent 16 bytes  received 12 bytes  18.67 bytes/sec
+Jun 20 23:28:29.346469 RL00122 file_transfer.py[5826]: total size is 0  speedup is 0.00
+Jun 20 23:28:29.348754 RL00122 file_transfer.py[5826]: rsync error: some files/attrs were not transferred (see previous errors) (code 23) at /var/lib/jenkins/workspace/MDevice_Multibranch_rc_v1.3-2RVG7AXPC5PAYG7XFIXOVAXWBARE7OZ56NAE7FIFO4J3PNN27OCQ/yocto_project/build_test/tmp/work/cortexa9hf-vfp-neon-poky-linux-gnueabi/rsync/3.1.1-r0/rsync-3.1.1/main.c(1165) [sender=3.1.1]
+Jun 20 23:28:29.370245 RL00122 file_transfer.py[5826]: hostname RL00122
+Jun 20 23:28:29.372713 RL00122 file_transfer.py[5826]: Status 256 from scp -P %s -i /tmp/.ssh/id_rsa %s@%s:%s/servicepacks/*.apm /var/rlm/servicepacks/
+Jun 20 23:28:29.374982 RL00122 file_transfer.py[5826]: Status 0 from nice -n 15 rsync -v -z --remove-source-files --inplace -e "ssh -p %s -i /tmp/.ssh/id_rsa" /var/rlm/journal/* %s@%s:%s/journal/
+Jun 20 23:28:29.377332 RL00122 file_transfer.py[5826]: Status 5888 from nice -n 15 rsync -v -z -r --remove-source-files --inplace -e "ssh -p %s -i /tmp/.ssh/id_rsa" /var/rlm/outsync/* %s@%s:%s/outsync/
+Jun 20 23:28:29.379458 RL00122 file_transfer.py[5826]: Status 5888 from rsync -v -z --remove-source-files --inplace -e "ssh -p %s -i /tmp/.ssh/id_rsa" /var/rlm/notify/* %s@%s:notify/
+Jun 20 23:28:31.117563 RL00122 systemd[1]: periodic_journal.service: Service hold-off time over, scheduling restart.
+Jun 20 23:28:31.123156 RL00122 systemd[1]: Stopped Periodc journal file creation.
+Jun 20 23:28:31.129389 RL00122 systemd[1]: Started Periodc journal file creation.
+Jun 20 23:28:31.269318 RL00122 root[5839]: Journal Dir 772b895a9fbb4a71b39ec108e62fb4c3
+Jun 20 23:28:31.286239 RL00122 root[5840]: File system@00056ed014b2dba1-8066a02e47c8ed9a.journal~ Size 8388608
+Jun 20 23:28:31.301266 RL00122 root[5841]: File system@00056ee6a027e53e-539a150f8d2a3e69.journal~ Size 8388608
+Jun 20 23:28:31.316663 RL00122 root[5842]: File system@cfcf705665114820adfea222856bf631-0000000000000001-00056eb877a3ebe3.journal Size 16777216
+Jun 20 23:28:31.332443 RL00122 root[5843]: File system.journal Size 33554432
+Jun 20 23:28:31.347021 RL00122 root[5844]: File system@00056e76737caaba-0bc45decc7de5d09.journal~ Size 8388608
+Jun 20 23:28:31.361702 RL00122 root[5845]: File system@00056ed8db6e7665-797e61548653c07b.journal~ Size 16777216
+Jun 20 23:28:31.377331 RL00122 root[5846]: File system@00056efdb4e192a8-6bf68efb63f91d57.journal~ Size 25165824
+Jun 20 23:28:31.390265 RL00122 root[5847]: File user-65534@51d5437ad4c84ec7b448b02531a07200-000000000000f56c-00056ecc63c6299d.journal Size 8388608
+Jun 20 23:28:31.405237 RL00122 root[5848]: File system@00056eb387c1a04e-87d5562a6957f93e.journal~ Size 8388608
+Jun 20 23:28:31.422195 RL00122 root[5849]: File user-65534@51d5437ad4c84ec7b448b02531a07200-00000000000013b3-00056e575f5b1338.journal Size 8388608
+Jun 20 23:28:31.438032 RL00122 root[5850]: File system@00056f15df183e2f-f8236a7c5dd95954.journal~ Size 8388608
+Jun 20 23:28:31.451179 RL00122 root[5851]: File system@00056ee3bd914b80-fee63128428b22e5.journal~ Size 25165824
+Jun 20 23:28:31.468170 RL00122 root[5852]: File system@00056e575f349d96-468f25f6640e476a.journal~ Size 50331648
+Jun 20 23:28:31.481677 RL00122 root[5853]: File system@00056eea76425185-19b8d6c6c209ba45.journal~ Size 8388608
+Jun 20 23:28:31.496573 RL00122 root[5854]: File system@0b051d72dacf46debabb7515102e081c-0000000000000001-00056e712511ec99.journal Size 16777216
+Jun 20 23:28:31.511466 RL00122 root[5855]: File system@00056eb1168bf86e-2d91b33c226fa47b.journal~ Size 25165824
+Jun 20 23:28:31.526573 RL00122 root[5856]: File system@00056e9b323ee552-5443363c0f2537a2.journal~ Size 8388608
+Jun 20 23:28:31.539449 RL00122 root[5857]: File system@00056e6852987e2b-98730577c67bbc21.journal~ Size 16777216
+Jun 20 23:28:31.554361 RL00122 root[5858]: File system@00056f17ccaa56cf-4e43dd5e15bdc126.journal~ Size 16777216
+Jun 20 23:28:31.569517 RL00122 root[5859]: File system@00056e88e27aaaf7-8c0282cde13948ed.journal~ Size 8388608
+Jun 20 23:28:31.582455 RL00122 root[5860]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000001254-00056e2fb8f1b855.journal Size 8388608
+Jun 20 23:28:31.597487 RL00122 root[5861]: File system@00056ef235baa317-964219d0b4008d1a.journal~ Size 16777216
+Jun 20 23:28:31.613616 RL00122 root[5862]: File system@00056e99bccb14c7-4ef82de321f73826.journal~ Size 41943040
+Jun 20 23:28:31.628662 RL00122 root[5863]: File system@2c0f1e4b4d8d492fbb115b0a24931041-0000000000000001-00056e2fb88c7ad9.journal Size 52428800
+Jun 20 23:28:31.643090 RL00122 root[5864]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000001a6e-00056e7673a628b4.journal Size 8388608
+Jun 20 23:28:31.658842 RL00122 root[5865]: File system@00056ecc6386cba1-028db97889553280.journal~ Size 50331648
+Jun 20 23:28:31.672259 RL00122 root[5866]: File system@b2d4bc02f12d4000991f9c96e9a42e2e-0000000000000001-00056e0f0548cb74.journal Size 41943040
+Jun 20 23:28:31.686964 RL00122 root[5867]: File system@00056ea0753ebdf1-4b29540791ed2c02.journal~ Size 16777216
+Jun 20 23:28:31.702886 RL00122 root[5868]: File system@00056e8424c628b6-c317df72d3201f2b.journal~ Size 8388608
+Jun 20 23:28:31.718144 RL00122 root[5869]: File system@00056e82820bd132-bdb3cf0fca49d783.journal~ Size 25165824
+Jun 20 23:28:31.732548 RL00122 root[5870]: File system@00056ed3d83d4254-e046c867e0198e68.journal~ Size 8388608
+Jun 20 23:28:31.747833 RL00122 root[5871]: File user-65534.journal Size 8388608
+Jun 20 23:28:31.763489 RL00122 root[5872]: File system@00056e2fb8b7f8e6-99f61613cbf5e137.journal~ Size 16777216
+Jun 20 23:28:31.777977 RL00122 root[5873]: File system@00056ea5c379c80c-a87e848e0ea23de1.journal~ Size 16777216
+Jun 20 23:28:31.792959 RL00122 root[5874]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000000339-00056e0efbb31d63.journal Size 8388608
+Jun 20 23:28:31.809231 RL00122 root[5875]: File system@00056e88b7626da2-fd6b99a17b6947bd.journal~ Size 16777216
+Jun 20 23:28:31.823610 RL00122 root[5876]: File system@1d4fb8e3e00b4d16aaf4fc8f92d22098-0000000000000001-00056efdb4b4104d.journal Size 52428800
+Jun 20 23:28:31.838969 RL00122 root[5877]: File system@00056e9b70345436-7828cab511bb0235.journal~ Size 8388608
+Jun 20 23:28:31.854972 RL00122 root[5878]: File system@00056e627dd1a21f-871a3b04d703851b.journal~ Size 16777216
+Jun 20 23:28:31.879802 RL00122 root[5880]: Cleaned up backup logs older than 7 days from /var/rlm/journal/
+Jun 20 23:28:32.083964 RL00122 root[5883]: Created log /var/rlm/journal//20180620_2328.log
+Jun 20 23:28:32.951272 RL00122 rlc[694]: Firewall log: '[adc]   268   728   749     2   359   199    18   775   372 '
+Jun 20 23:28:39.298283 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=145107
+                                         FO=145101
+                                         FD=6
+                                         CPU Usage: 56%
+                                         Up Time: 14436     
+                                         % Mem Used(sys):39.05912
+                                         Mem Used(sys):  410812416 
+                                         Mem Free(sys):  640958464 
+                                         Mem Used(rlc):  48664     
+                                         Processes: 128       
+Jun 20 23:28:39.298359 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2821 |         2407 |         4129 |         9377 |
+                                         |    eth0 Tx |        49882 |        34163 |        56621 |       226561 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:29:02.967576 RL00122 rlc[694]: Firewall log: '[adc]   249   732   749     1   352   192    18   776   372 '
+Jun 20 23:29:15.282095 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:29:15.282157 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:29:15.283137 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:29:15.283910 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:29:15.283953 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:29:15.283979 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:29:15.284314 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 20 23:29:32.991686 RL00122 rlc[694]: Firewall log: '[adc]   207   738   749     4   308   143    15   775   371 '
+Jun 20 23:29:39.289159 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=146308
+                                         FO=146302
+                                         FD=6
+                                         CPU Usage: 55%
+                                         Up Time: 14496     
+                                         % Mem Used(sys):39.07781
+                                         Mem Used(sys):  411009024 
+                                         Mem Free(sys):  640761856 
+                                         Mem Used(rlc):  48696     
+                                         Processes: 130       
+Jun 20 23:29:39.289246 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3383 |         2337 |         3857 |         5828 |
+                                         |    eth0 Tx |        42649 |        34264 |        55214 |        83389 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:30:03.025049 RL00122 rlc[694]: Firewall log: '[adc]   289   725   749     2   401   232    20   776   372 '
+Jun 20 23:30:15.284544 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:30:15.284593 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:30:15.285693 RL00122 sensord[430]:   in0: +1.12 V
+Jun 20 23:30:15.286618 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:30:15.286658 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:30:15.286682 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:30:15.287017 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:30:33.042109 RL00122 rlc[694]: Firewall log: '[adc]   253   730   749     2   362   196    15   775   372 '
+Jun 20 23:30:39.280017 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=147509
+                                         FO=147502
+                                         FD=7
+                                         CPU Usage: 8%
+                                         Up Time: 14556     
+                                         % Mem Used(sys):39.08560
+                                         Mem Used(sys):  411090944 
+                                         Mem Free(sys):  640679936 
+                                         Mem Used(rlc):  48740     
+                                         Processes: 130       
+Jun 20 23:30:39.280153 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3139 |         2547 |         3530 |         7027 |
+                                         |    eth0 Tx |        45933 |        36143 |        52423 |        92193 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:30:54.007599 RL00122 kernel: wlcore: down
+Jun 20 23:30:54.007439 RL00122 kernel[377]: wlcore: down
+Jun 20 23:30:54.006696 RL00122 NetworkManager[667]: <info>  [1529537454.0065] device (wlan0): set-hw-addr: set MAC address to 5A:11:38:E5:74:E0 (scanning)
+Jun 20 23:30:54.035706 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:30:54.035539 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:30:54.614537 RL00122 NetworkManager[667]: <info>  [1529537454.6143] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 20 23:30:54.617920 RL00122 NetworkManager[667]: <info>  [1529537454.6177] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 20 23:30:54.703017 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:31:03.072730 RL00122 rlc[694]: Firewall log: '[adc]   320   715   750     1   440   259    17   777   372 '
+Jun 20 23:31:15.287311 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:31:15.287393 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:31:15.288846 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:31:15.290021 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:31:15.290091 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:31:15.290141 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:31:15.290756 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:31:33.092781 RL00122 rlc[694]: Firewall log: '[adc]   248   733   749     1   356   188    14   775   371 '
+Jun 20 23:31:39.270373 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=148710
+                                         FO=148704
+                                         FD=6
+                                         CPU Usage: 6%
+                                         Up Time: 14616     
+                                         % Mem Used(sys):39.07391
+                                         Mem Used(sys):  410968064 
+                                         Mem Free(sys):  640802816 
+                                         Mem Used(rlc):  48772     
+                                         Processes: 128       
+Jun 20 23:31:39.270506 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3732 |         2489 |         3519 |         6951 |
+                                         |    eth0 Tx |        54088 |        35447 |        52119 |        96097 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:32:03.119519 RL00122 rlc[694]: Firewall log: '[adc]   309   725   750     2   416   259    21   777   372 '
+Jun 20 23:32:15.291149 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:32:15.291253 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:32:15.296710 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:32:15.300968 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:32:15.301046 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:32:15.301093 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:32:15.301800 RL00122 sensord[430]:   temp1: 70.7 C
+Jun 20 23:32:33.146455 RL00122 rlc[694]: Firewall log: '[adc]   231   734   749     1   326   180    17   776   371 '
+Jun 20 23:32:39.260789 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=149912
+                                         FO=149906
+                                         FD=6
+                                         CPU Usage: 7%
+                                         Up Time: 14676     
+                                         % Mem Used(sys):39.07080
+                                         Mem Used(sys):  410935296 
+                                         Mem Free(sys):  640835584 
+                                         Mem Used(rlc):  48772     
+                                         Processes: 128       
+Jun 20 23:32:39.260923 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3801 |         2337 |         4114 |         5697 |
+                                         |    eth0 Tx |        54504 |        38981 |        58891 |        82021 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:33:03.167304 RL00122 rlc[694]: Firewall log: '[adc]   260   730   749     1   362   201    17   777   372 '
+Jun 20 23:33:05.744663 RL00122 NetworkManager[667]: <info>  [1529537585.7444] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:33:15.302150 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:33:15.302207 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:33:15.306251 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:33:15.308558 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:33:15.308613 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:33:15.308640 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:33:15.309059 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 20 23:33:33.194086 RL00122 rlc[694]: Firewall log: '[adc]   289   725   749     1   404   240    16   776   372 '
+Jun 20 23:33:39.252479 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=151092
+                                         FO=151086
+                                         FD=6
+                                         CPU Usage: 11%
+                                         Up Time: 14736     
+                                         % Mem Used(sys):39.09027
+                                         Mem Used(sys):  411140096 
+                                         Mem Free(sys):  640630784 
+                                         Mem Used(rlc):  48776     
+                                         Processes: 130       
+Jun 20 23:33:39.252609 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3807 |         2337 |         4086 |         7409 |
+                                         |    eth0 Tx |        56132 |        38086 |        57638 |        94195 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:34:03.214271 RL00122 rlc[694]: Firewall log: '[adc]   279   727   749     1   404   220    18   776   372 '
+Jun 20 23:34:15.309454 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:34:15.309538 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:34:15.310830 RL00122 sensord[430]:   in0: +1.13 V
+Jun 20 23:34:15.311724 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:34:15.311771 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:34:15.311801 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:34:15.312203 RL00122 sensord[430]:   temp1: 75.1 C
+Jun 20 23:34:33.228251 RL00122 rlc[694]: Firewall log: '[adc]   351   716   750     3   467   311    17   777   372 '
+Jun 20 23:34:39.243497 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=152292
+                                         FO=152285
+                                         FD=7
+                                         CPU Usage: 32%
+                                         Up Time: 14796     
+                                         % Mem Used(sys):39.10818
+                                         Mem Used(sys):  411328512 
+                                         Mem Free(sys):  640442368 
+                                         Mem Used(rlc):  49068     
+                                         Processes: 129       
+Jun 20 23:34:39.243625 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3597 |         2337 |         3741 |         6537 |
+                                         |    eth0 Tx |        50388 |        34932 |        55986 |        83935 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:35:03.233239 RL00122 rlc[694]: Firewall log: '[adc]   293   724   749     3   390   237    16   777   372 '
+Jun 20 23:35:15.312473 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:35:15.312521 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:35:15.316465 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:35:15.317329 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:35:15.317374 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:35:15.317402 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:35:15.317793 RL00122 sensord[430]:   temp1: 77.9 C
+Jun 20 23:35:33.246528 RL00122 rlc[694]: Firewall log: '[adc]   195   738   749     1   288   125    17   775   371 '
+Jun 20 23:35:39.233979 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=153512
+                                         FO=153505
+                                         FD=7
+                                         CPU Usage: 7%
+                                         Up Time: 14856     
+                                         % Mem Used(sys):39.11442
+                                         Mem Used(sys):  411394048 
+                                         Mem Free(sys):  640376832 
+                                         Mem Used(rlc):  49084     
+                                         Processes: 128       
+Jun 20 23:35:39.234052 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2859 |         2407 |         3513 |         6719 |
+                                         |    eth0 Tx |        36737 |        36616 |        51573 |        86332 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:36:03.260034 RL00122 rlc[694]: Firewall log: '[adc]   211   741   749     2   314   146    19   776   371 '
+Jun 20 23:36:09.971798 RL00122 NetworkManager[667]: <info>  [1529537769.9715] device (wlan0): set-hw-addr: set MAC address to E6:F1:5C:67:9E:86 (scanning)
+Jun 20 23:36:09.976532 RL00122 kernel: wlcore: down
+Jun 20 23:36:09.975607 RL00122 kernel[377]: wlcore: down
+Jun 20 23:36:10.005668 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:36:10.006235 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:36:10.014334 RL00122 NetworkManager[667]: <info>  [1529537770.0140] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 20 23:36:10.039931 RL00122 NetworkManager[667]: <info>  [1529537770.0396] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 20 23:36:10.058165 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:36:15.318045 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:36:15.318100 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:36:15.322706 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:36:15.323861 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:36:15.323907 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:36:15.323934 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:36:15.324341 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 20 23:36:33.273466 RL00122 rlc[694]: Firewall log: '[adc]   289   725   749     2   433   267    17   776   372 '
+Jun 20 23:36:39.224377 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=154691
+                                         FO=154685
+                                         FD=6
+                                         CPU Usage: 11%
+                                         Up Time: 14916     
+                                         % Mem Used(sys):39.12299
+                                         Mem Used(sys):  411484160 
+                                         Mem Free(sys):  640286720 
+                                         Mem Used(rlc):  49092     
+                                         Processes: 128       
+Jun 20 23:36:39.224500 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4253 |         2407 |         3682 |         5831 |
+                                         |    eth0 Tx |        77534 |        36652 |        53674 |        85313 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:37:03.293429 RL00122 rlc[694]: Firewall log: '[adc]   266   727   749     1   370   125    19   775   371 '
+Jun 20 23:37:15.324618 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:37:15.324696 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:37:15.326281 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:37:15.327466 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:37:15.327545 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:37:15.327597 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:37:15.328266 RL00122 sensord[430]:   temp1: 69.5 C
+Jun 20 23:37:17.058951 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 20 23:37:33.307861 RL00122 rlc[694]: Firewall log: '[adc]   248   732   749     3   355   185    21   777   372 '
+Jun 20 23:37:39.215171 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=155893
+                                         FO=155887
+                                         FD=6
+                                         CPU Usage: 7%
+                                         Up Time: 14976     
+                                         % Mem Used(sys):39.10663
+                                         Mem Used(sys):  411312128 
+                                         Mem Free(sys):  640458752 
+                                         Mem Used(rlc):  49100     
+                                         Processes: 128       
+Jun 20 23:37:39.215407 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3173 |         2197 |         4015 |         6638 |
+                                         |    eth0 Tx |        54492 |        37785 |        58261 |        83924 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:38:03.327525 RL00122 rlc[694]: Firewall log: '[adc]   223   737   749     2   320   178    21   777   371 '
+Jun 20 23:38:15.328559 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:38:15.328644 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:38:15.330135 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:38:15.331457 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:38:15.331533 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:38:15.331580 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:38:15.332158 RL00122 sensord[430]:   temp1: 69.0 C
+Jun 20 23:38:20.770212 RL00122 NetworkManager[667]: <info>  [1529537900.7700] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:38:33.326842 RL00122 rlc[694]: Firewall log: '[adc]   350   717   750     3   455   320    20   778   373 '
+Jun 20 23:38:39.206158 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=157095
+                                         FO=157089
+                                         FD=6
+                                         CPU Usage: 55%
+                                         Up Time: 15036     
+                                         % Mem Used(sys):39.11208
+                                         Mem Used(sys):  411369472 
+                                         Mem Free(sys):  640401408 
+                                         Mem Used(rlc):  49144     
+                                         Processes: 130       
+Jun 20 23:38:39.206236 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3875 |         2407 |         3686 |         6511 |
+                                         |    eth0 Tx |        59130 |        40107 |        55058 |        86809 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:39:03.340265 RL00122 rlc[694]: Firewall log: '[adc]   222   737   750     1   322   154    20   775   371 '
+Jun 20 23:39:15.332496 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:39:15.332561 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:39:15.333533 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:39:15.334287 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:39:15.334332 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:39:15.334359 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:39:15.334686 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 20 23:39:17.117474 RL00122 systemd[1]: periodic_upgrade.service: Service hold-off time over, scheduling restart.
+Jun 20 23:39:17.120310 RL00122 systemd[1]: Stopped Period System Upgrade Check.
+Jun 20 23:39:17.123857 RL00122 systemd[1]: Started Period System Upgrade Check.
+Jun 20 23:39:19.919271 RL00122 root[5945]: Connection info eth0    ethernet  connected     wired
+Jun 20 23:39:19.921831 RL00122 upgrade_system.py[5940]: Upgrade not initiated
+Jun 20 23:39:33.353742 RL00122 rlc[694]: Firewall log: '[adc]   317   720   750     3   429   262    19   776   372 '
+Jun 20 23:39:39.197125 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=158294
+                                         FO=158288
+                                         FD=6
+                                         CPU Usage: 58%
+                                         Up Time: 15096     
+                                         % Mem Used(sys):39.15959
+                                         Mem Used(sys):  411869184 
+                                         Mem Free(sys):  639901696 
+                                         Mem Used(rlc):  49172     
+                                         Processes: 130       
+Jun 20 23:39:39.197235 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3471 |         2267 |         3893 |         4907 |
+                                         |    eth0 Tx |        55317 |        35675 |        57326 |        78198 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:40:03.367050 RL00122 rlc[694]: Firewall log: '[adc]   256   732   749     1   353   191    16   776   372 '
+Jun 20 23:40:15.334937 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:40:15.334992 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:40:15.336263 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:40:15.337136 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:40:15.337190 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:40:15.337222 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:40:15.337589 RL00122 sensord[430]:   temp1: 77.4 C
+Jun 20 23:40:33.384575 RL00122 rlc[694]: Firewall log: '[adc]   307   722   749     2   440   262    16   777   372 '
+Jun 20 23:40:39.188383 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=159493
+                                         FO=159487
+                                         FD=6
+                                         CPU Usage: 12%
+                                         Up Time: 15156     
+                                         % Mem Used(sys):39.14401
+                                         Mem Used(sys):  411705344 
+                                         Mem Free(sys):  640065536 
+                                         Mem Used(rlc):  49200     
+                                         Processes: 130       
+Jun 20 23:40:39.188518 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         6219 |         2401 |         3400 |         6219 |
+                                         |    eth0 Tx |        85715 |        37144 |        50962 |        85715 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:40:52.328021 RL00122 rlc[694]: Failed to write bytes.
+Jun 20 23:41:03.402494 RL00122 rlc[694]: Firewall log: '[adc]   218   736   749     1   318   153    17   775   372 '
+Jun 20 23:41:15.337881 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:41:15.337961 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:41:15.342417 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:41:15.346081 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:41:15.346151 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:41:15.346197 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:41:15.346724 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:41:24.965726 RL00122 kernel: wlcore: down
+Jun 20 23:41:24.965247 RL00122 NetworkManager[667]: <info>  [1529538084.9650] device (wlan0): set-hw-addr: set MAC address to C2:A9:54:19:A5:24 (scanning)
+Jun 20 23:41:24.968212 RL00122 kernel[377]: wlcore: down
+Jun 20 23:41:25.007228 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:41:25.005598 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:41:25.062878 RL00122 NetworkManager[667]: <info>  [1529538085.0627] device (wlan0): supplicant interface state: scanning -> disconnected
+Jun 20 23:41:25.072836 RL00122 NetworkManager[667]: <info>  [1529538085.0727] device (wlan0): supplicant interface state: disconnected -> inactive
+Jun 20 23:41:25.077905 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:41:33.424972 RL00122 rlc[694]: Firewall log: '[adc]   311   726   750     2   452   263    18   777   372 '
+Jun 20 23:41:39.178841 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=160694
+                                         FO=160688
+                                         FD=6
+                                         CPU Usage: 12%
+                                         Up Time: 15216     
+                                         % Mem Used(sys):39.14090
+                                         Mem Used(sys):  411672576 
+                                         Mem Free(sys):  640098304 
+                                         Mem Used(rlc):  49204     
+                                         Processes: 130       
+Jun 20 23:41:39.178975 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         6107 |         1987 |         3444 |         6107 |
+                                         |    eth0 Tx |        90148 |        34240 |        52604 |        90148 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:42:03.422427 RL00122 rlc[694]: Firewall log: '[adc]   208   732   749     1   282   134    20   775   371 '
+Jun 20 23:42:15.346945 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:42:15.346996 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:42:15.347919 RL00122 sensord[430]:   in0: +1.13 V
+Jun 20 23:42:15.348662 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:42:15.348704 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:42:15.348728 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:42:15.349064 RL00122 sensord[430]:   temp1: 70.1 C
+Jun 20 23:42:33.436156 RL00122 rlc[694]: Firewall log: '[adc]   281   727   750     1   392   218    17   777   372 '
+Jun 20 23:42:39.169282 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=161897
+                                         FO=161891
+                                         FD=6
+                                         CPU Usage: 9%
+                                         Up Time: 15276     
+                                         % Mem Used(sys):39.13623
+                                         Mem Used(sys):  411623424 
+                                         Mem Free(sys):  640147456 
+                                         Mem Used(rlc):  49276     
+                                         Processes: 130       
+Jun 20 23:42:39.172871 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4311 |         2337 |         3549 |         6201 |
+                                         |    eth0 Tx |        72839 |        38317 |        54444 |        82130 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:43:03.452602 RL00122 rlc[694]: Firewall log: '[adc]   235   734   749     2   337   179    19   776   371 '
+Jun 20 23:43:15.349331 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:43:15.349409 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:43:15.350871 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:43:15.352039 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:43:15.352108 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:43:15.352154 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:43:15.352806 RL00122 sensord[430]:   temp1: 69.0 C
+Jun 20 23:43:33.472490 RL00122 rlc[694]: Firewall log: '[adc]   218   737   749     1   316   152    17   775   371 '
+Jun 20 23:43:35.875729 RL00122 NetworkManager[667]: <info>  [1529538215.8755] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:43:39.160079 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=163099
+                                         FO=163093
+                                         FD=6
+                                         CPU Usage: 55%
+                                         Up Time: 15336     
+                                         % Mem Used(sys):39.13389
+                                         Mem Used(sys):  411598848 
+                                         Mem Free(sys):  640172032 
+                                         Mem Used(rlc):  49280     
+                                         Processes: 128       
+Jun 20 23:43:39.160153 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3353 |         2185 |         3975 |         6027 |
+                                         |    eth0 Tx |        51884 |        34612 |        57342 |        87337 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:44:03.484828 RL00122 rlc[694]: Firewall log: '[adc]   284   726   749     1   402   223    16   776   372 '
+Jun 20 23:44:15.353133 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:44:15.353193 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:44:15.354295 RL00122 sensord[430]:   in0: +1.12 V
+Jun 20 23:44:15.355156 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:44:15.355209 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:44:15.355239 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:44:15.355820 RL00122 sensord[430]:   temp1: 74.0 C
+Jun 20 23:44:33.509808 RL00122 rlc[694]: Firewall log: '[adc]   304   723   749     1   408   237    16   777   372 '
+Jun 20 23:44:39.150870 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=164299
+                                         FO=164293
+                                         FD=6
+                                         CPU Usage: 25%
+                                         Up Time: 15396     
+                                         % Mem Used(sys):39.13233
+                                         Mem Used(sys):  411582464 
+                                         Mem Free(sys):  640188416 
+                                         Mem Used(rlc):  49332     
+                                         Processes: 128       
+Jun 20 23:44:39.151034 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         5619 |         2473 |         3831 |         6625 |
+                                         |    eth0 Tx |        84792 |        33594 |        55954 |        89240 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:45:03.505933 RL00122 rlc[694]: Firewall log: '[adc]   302   721   750     2   390   273    16   777   372 '
+Jun 20 23:45:15.356115 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:45:15.356173 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:45:15.357103 RL00122 sensord[430]:   in0: +1.13 V
+Jun 20 23:45:15.357872 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:45:15.357916 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:45:15.357942 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:45:15.358262 RL00122 sensord[430]:   temp1: 76.3 C
+Jun 20 23:45:33.518443 RL00122 rlc[694]: Firewall log: '[adc]   329   719   750     1   439   271    22   777   372 '
+Jun 20 23:45:39.141002 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=165497
+                                         FO=165491
+                                         FD=6
+                                         CPU Usage: 56%
+                                         Up Time: 15456     
+                                         % Mem Used(sys):39.12065
+                                         Mem Used(sys):  411459584 
+                                         Mem Free(sys):  640311296 
+                                         Mem Used(rlc):  49608     
+                                         Processes: 128       
+Jun 20 23:45:39.141100 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3651 |         2197 |         3569 |         6455 |
+                                         |    eth0 Tx |        60037 |        35207 |        52903 |        74913 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:46:03.546285 RL00122 rlc[694]: Firewall log: '[adc]   270   728   749     1   372   215    16   776   372 '
+Jun 20 23:46:15.358571 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:46:15.358636 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:46:15.359794 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:46:15.360607 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:46:15.360654 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:46:15.360685 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:46:15.361032 RL00122 sensord[430]:   temp1: 75.1 C
+Jun 20 23:46:33.571939 RL00122 rlc[694]: Firewall log: '[adc]   248   732   749     1   347   186    18   775   372 '
+Jun 20 23:46:39.132018 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=166697
+                                         FO=166691
+                                         FD=6
+                                         CPU Usage: 11%
+                                         Up Time: 15516     
+                                         % Mem Used(sys):39.09417
+                                         Mem Used(sys):  411181056 
+                                         Mem Free(sys):  640589824 
+                                         Mem Used(rlc):  49628     
+                                         Processes: 128       
+Jun 20 23:46:39.132160 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3283 |         2276 |         3213 |         6444 |
+                                         |    eth0 Tx |        63209 |        35117 |        49195 |        88045 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:46:39.981204 RL00122 NetworkManager[667]: <info>  [1529538399.9808] device (wlan0): set-hw-addr: set MAC address to FA:B8:33:1D:67:D9 (scanning)
+Jun 20 23:46:39.992953 RL00122 kernel: wlcore: down
+Jun 20 23:46:39.985828 RL00122 kernel[377]: wlcore: down
+Jun 20 23:46:40.015941 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:46:40.015701 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:46:40.011000 RL00122 NetworkManager[667]: <info>  [1529538400.0107] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 20 23:46:40.022733 RL00122 NetworkManager[667]: <info>  [1529538400.0224] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 20 23:46:40.058075 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:47:03.594079 RL00122 rlc[694]: Firewall log: '[adc]   256   734   749     3   369   210    19   776   372 '
+Jun 20 23:47:15.361318 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:47:15.361400 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:47:15.366513 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:47:15.369221 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:47:15.369289 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:47:15.369333 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:47:15.369843 RL00122 sensord[430]:   temp1: 70.1 C
+Jun 20 23:47:33.618738 RL00122 rlc[694]: Firewall log: '[adc]   247   732   749     1   357   188    19   776   372 '
+Jun 20 23:47:39.123003 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=167899
+                                         FO=167893
+                                         FD=6
+                                         CPU Usage: 9%
+                                         Up Time: 15576     
+                                         % Mem Used(sys):39.09417
+                                         Mem Used(sys):  411181056 
+                                         Mem Free(sys):  640589824 
+                                         Mem Used(rlc):  49680     
+                                         Processes: 128       
+Jun 20 23:47:39.123138 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         5377 |         2127 |         3783 |         5959 |
+                                         |    eth0 Tx |        80755 |        35226 |        55697 |        95743 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:48:03.613298 RL00122 rlc[694]: Firewall log: '[adc]   216   737   749     3   312   148    17   775   371 '
+Jun 20 23:48:15.370153 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:48:15.370235 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:48:15.376501 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:48:15.377696 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:48:15.377775 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:48:15.377830 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:48:15.378509 RL00122 sensord[430]:   temp1: 69.5 C
+Jun 20 23:48:33.626758 RL00122 rlc[694]: Firewall log: '[adc]   238   735   749     1   342   167    20   776   372 '
+Jun 20 23:48:39.113090 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=169100
+                                         FO=169094
+                                         FD=6
+                                         CPU Usage: 8%
+                                         Up Time: 15636     
+                                         % Mem Used(sys):39.11792
+                                         Mem Used(sys):  411430912 
+                                         Mem Free(sys):  640339968 
+                                         Mem Used(rlc):  49852     
+                                         Processes: 128       
+Jun 20 23:48:39.113222 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         5307 |         2407 |         3940 |         6013 |
+                                         |    eth0 Tx |        72854 |        34960 |        57566 |        90513 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:48:50.859740 RL00122 NetworkManager[667]: <info>  [1529538530.8596] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:49:03.645972 RL00122 rlc[694]: Firewall log: '[adc]   214   738   749     2   309   149    17   775   371 '
+Jun 20 23:49:15.378808 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:49:15.378863 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:49:15.383214 RL00122 sensord[430]:   in0: +1.16 V
+Jun 20 23:49:15.386096 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:49:15.386155 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:49:15.386182 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:49:15.386660 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:49:21.780108 RL00122 rlc[694]: Failed to write bytes.
+Jun 20 23:49:33.665902 RL00122 rlc[694]: Firewall log: '[adc]   322   721   750     1   421   287    16   779   372 '
+Jun 20 23:49:39.103566 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=170301
+                                         FO=170294
+                                         FD=7
+                                         CPU Usage: 57%
+                                         Up Time: 15696     
+                                         % Mem Used(sys):39.12104
+                                         Mem Used(sys):  411463680 
+                                         Mem Free(sys):  640307200 
+                                         Mem Used(rlc):  49892     
+                                         Processes: 129       
+Jun 20 23:49:39.103654 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2881 |         2547 |         3933 |         5261 |
+                                         |    eth0 Tx |        40460 |        36468 |        56922 |        83225 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:49:55.370455 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 20 23:50:03.683846 RL00122 rlc[694]: Firewall log: '[adc]   345   718   750     2   464   291    16   777   372 '
+Jun 20 23:50:15.386903 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:50:15.386957 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:50:15.387935 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:50:15.388702 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:50:15.388744 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:50:15.388767 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:50:15.389133 RL00122 sensord[430]:   temp1: 75.7 C
+Jun 20 23:50:33.686279 RL00122 rlc[694]: Firewall log: '[adc]   335   717   750     5   430   280    18   777   372 '
+Jun 20 23:50:39.094183 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=171502
+                                         FO=171495
+                                         FD=7
+                                         CPU Usage: 57%
+                                         Up Time: 15756     
+                                         % Mem Used(sys):39.11948
+                                         Mem Used(sys):  411447296 
+                                         Mem Free(sys):  640323584 
+                                         Mem Used(rlc):  49928     
+                                         Processes: 130       
+Jun 20 23:50:39.094278 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3021 |         2425 |         3317 |         5907 |
+                                         |    eth0 Tx |        39953 |        37503 |        50646 |        82362 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:51:03.700649 RL00122 rlc[694]: Firewall log: '[adc]   286   726   749     6   405   222    20   778   372 '
+Jun 20 23:51:15.389544 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:51:15.389638 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:51:15.396798 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:51:15.398158 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:51:15.398241 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:51:15.398291 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:51:15.399144 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 20 23:51:33.717272 RL00122 rlc[694]: Firewall log: '[adc]   262   730   749     1   371   208    19   776   372 '
+Jun 20 23:51:39.085156 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=172704
+                                         FO=172697
+                                         FD=7
+                                         CPU Usage: 11%
+                                         Up Time: 15816     
+                                         % Mem Used(sys):39.17128
+                                         Mem Used(sys):  411992064 
+                                         Mem Free(sys):  639778816 
+                                         Mem Used(rlc):  49984     
+                                         Processes: 130       
+Jun 20 23:51:39.085291 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3843 |         2477 |         3408 |         5903 |
+                                         |    eth0 Tx |        52987 |        34814 |        52321 |        88281 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:51:54.973178 RL00122 NetworkManager[667]: <info>  [1529538714.9729] device (wlan0): set-hw-addr: set MAC address to BA:54:95:16:9A:B7 (scanning)
+Jun 20 23:51:54.978076 RL00122 kernel: wlcore: down
+Jun 20 23:51:54.975574 RL00122 kernel[377]: wlcore: down
+Jun 20 23:51:55.015828 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:51:55.005634 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:51:55.004313 RL00122 NetworkManager[667]: <info>  [1529538715.0040] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 20 23:51:55.102166 RL00122 NetworkManager[667]: <info>  [1529538715.1019] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 20 23:51:55.123394 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:52:03.736110 RL00122 rlc[694]: Firewall log: '[adc]   277   727   750     3   404   224    19   776   372 '
+Jun 20 23:52:15.399471 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:52:15.399549 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:52:15.402438 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:52:15.403816 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:52:15.403896 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:52:15.403952 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:52:15.404613 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:52:33.752976 RL00122 rlc[694]: Firewall log: '[adc]   219   737   749     4   319   151    16   777   371 '
+Jun 20 23:52:39.076155 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=173906
+                                         FO=173900
+                                         FD=6
+                                         CPU Usage: 14%
+                                         Up Time: 15876     
+                                         % Mem Used(sys):39.17050
+                                         Mem Used(sys):  411983872 
+                                         Mem Free(sys):  639787008 
+                                         Mem Used(rlc):  50040     
+                                         Processes: 128       
+Jun 20 23:52:39.076290 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3143 |         2769 |         3828 |         7611 |
+                                         |    eth0 Tx |        47182 |        34204 |        55275 |        92143 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:53:02.162868 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 20 23:53:03.780237 RL00122 rlc[694]: Firewall log: '[adc]   287   726   749     1   395   226    17   777   372 '
+Jun 20 23:53:15.404913 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:53:15.405062 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:53:15.406846 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:53:15.408125 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:53:15.408210 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:53:15.408263 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:53:15.408915 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 20 23:53:33.769734 RL00122 rlc[694]: Firewall log: '[adc]   213   738   749     2   302   181    18   775   371 '
+Jun 20 23:53:39.067140 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=175107
+                                         FO=175101
+                                         FD=6
+                                         CPU Usage: 6%
+                                         Up Time: 15936     
+                                         % Mem Used(sys):39.17205
+                                         Mem Used(sys):  412000256 
+                                         Mem Free(sys):  639770624 
+                                         Mem Used(rlc):  50068     
+                                         Processes: 128       
+Jun 20 23:53:39.067275 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4759 |         2343 |         4108 |         6639 |
+                                         |    eth0 Tx |        47672 |        35317 |        58169 |        91353 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:54:03.783105 RL00122 rlc[694]: Firewall log: '[adc]   239   734   749     2   353   173    18   778   371 '
+Jun 20 23:54:05.899795 RL00122 NetworkManager[667]: <info>  [1529538845.8996] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:54:15.409189 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:54:15.409241 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:54:15.413356 RL00122 sensord[430]:   in0: +1.16 V
+Jun 20 23:54:15.415475 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:54:15.415523 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:54:15.415546 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:54:15.415854 RL00122 sensord[430]:   temp1: 74.0 C
+Jun 20 23:54:33.802280 RL00122 rlc[694]: Firewall log: '[adc]   286   725   749     2   396   234    19   776   372 '
+Jun 20 23:54:39.057436 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=176289
+                                         FO=176283
+                                         FD=6
+                                         CPU Usage: 58%
+                                         Up Time: 15996     
+                                         % Mem Used(sys):39.17283
+                                         Mem Used(sys):  412008448 
+                                         Mem Free(sys):  639762432 
+                                         Mem Used(rlc):  50108     
+                                         Processes: 129       
+Jun 20 23:54:39.057521 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3431 |         2477 |         3759 |         6779 |
+                                         |    eth0 Tx |        41319 |        35905 |        55235 |        88026 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:55:03.814714 RL00122 rlc[694]: Firewall log: '[adc]   270   728   749     1   381   209    21   776   372 '
+Jun 20 23:55:15.416160 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:55:15.416225 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:55:15.417370 RL00122 sensord[430]:   in0: +1.13 V
+Jun 20 23:55:15.418186 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:55:15.418229 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:55:15.418256 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:55:15.418603 RL00122 sensord[430]:   temp1: 76.8 C
+Jun 20 23:55:33.845453 RL00122 rlc[694]: Firewall log: '[adc]   291   722   749     2   392   228    16   776   372 '
+Jun 20 23:55:39.048607 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=177490
+                                         FO=177484
+                                         FD=6
+                                         CPU Usage: 6%
+                                         Up Time: 16056     
+                                         % Mem Used(sys):39.18958
+                                         Mem Used(sys):  412184576 
+                                         Mem Free(sys):  639586304 
+                                         Mem Used(rlc):  50152     
+                                         Processes: 129       
+Jun 20 23:55:39.048737 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3605 |         2325 |         3453 |         6344 |
+                                         |    eth0 Tx |        47176 |        34117 |        51363 |        80536 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:56:03.835900 RL00122 rlc[694]: Firewall log: '[adc]   299   724   749     1   411   242    17   777   372 '
+Jun 20 23:56:12.181397 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 20 23:56:15.418908 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:56:15.418972 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:56:15.420132 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:56:15.420965 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:56:15.421011 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:56:15.421041 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:56:15.421364 RL00122 sensord[430]:   temp1: 78.5 C
+Jun 20 23:56:33.870563 RL00122 rlc[694]: Firewall log: '[adc]   213   738   749     1   302   141    16   775   372 '
+Jun 20 23:56:39.039251 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=178690
+                                         FO=178684
+                                         FD=6
+                                         CPU Usage: 9%
+                                         Up Time: 16116     
+                                         % Mem Used(sys):39.19970
+                                         Mem Used(sys):  412291072 
+                                         Mem Free(sys):  639479808 
+                                         Mem Used(rlc):  50180     
+                                         Processes: 128       
+Jun 20 23:56:39.039383 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4479 |         2516 |         3388 |         7637 |
+                                         |    eth0 Tx |        46747 |        37117 |        50224 |        91897 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:57:03.890471 RL00122 rlc[694]: Firewall log: '[adc]   232   735   749     2   350   180    21   776   371 '
+Jun 20 23:57:09.961571 RL00122 NetworkManager[667]: <info>  [1529539029.9613] device (wlan0): set-hw-addr: set MAC address to 96:81:73:3B:50:34 (scanning)
+Jun 20 23:57:09.965836 RL00122 kernel: wlcore: down
+Jun 20 23:57:09.965595 RL00122 kernel[377]: wlcore: down
+Jun 20 23:57:09.995886 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:57:09.995646 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 20 23:57:10.073087 RL00122 NetworkManager[667]: <info>  [1529539030.0729] device (wlan0): supplicant interface state: scanning -> disconnected
+Jun 20 23:57:10.087556 RL00122 NetworkManager[667]: <info>  [1529539030.0874] device (wlan0): supplicant interface state: disconnected -> inactive
+Jun 20 23:57:10.093299 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 20 23:57:15.421629 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:57:15.421677 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:57:15.425937 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:57:15.427816 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:57:15.427855 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:57:15.427880 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:57:15.428192 RL00122 sensord[430]:   temp1: 74.0 C
+Jun 20 23:57:33.912251 RL00122 rlc[694]: Firewall log: '[adc]   196   740   749     2   293   128    15   775   371 '
+Jun 20 23:57:39.029803 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=179891
+                                         FO=179885
+                                         FD=6
+                                         CPU Usage: 9%
+                                         Up Time: 16176     
+                                         % Mem Used(sys):39.21061
+                                         Mem Used(sys):  412405760 
+                                         Mem Free(sys):  639365120 
+                                         Mem Used(rlc):  50180     
+                                         Processes: 128       
+Jun 20 23:57:39.029942 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3947 |         2236 |         3625 |         7179 |
+                                         |    eth0 Tx |        52883 |        35040 |        54356 |        90826 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:58:03.909678 RL00122 rlc[694]: Firewall log: '[adc]   212   737   749     1   305   147    16   775   372 '
+Jun 20 23:58:15.428414 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:58:15.428463 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:58:15.432803 RL00122 sensord[430]:   in0: +1.14 V
+Jun 20 23:58:15.434869 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:58:15.434918 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:58:15.434942 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:58:15.435235 RL00122 sensord[430]:   temp1: 69.5 C
+Jun 20 23:58:33.926156 RL00122 rlc[694]: Firewall log: '[adc]   194   740   749     1   283   125    18   775   371 '
+Jun 20 23:58:39.020265 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=181094
+                                         FO=181087
+                                         FD=7
+                                         CPU Usage: 6%
+                                         Up Time: 16236     
+                                         % Mem Used(sys):39.18257
+                                         Mem Used(sys):  412110848 
+                                         Mem Free(sys):  639660032 
+                                         Mem Used(rlc):  50180     
+                                         Processes: 128       
+Jun 20 23:58:39.020398 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3527 |         2407 |         3845 |         7017 |
+                                         |    eth0 Tx |        44933 |        38474 |        56537 |        86314 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 20 23:59:03.946154 RL00122 rlc[694]: Firewall log: '[adc]   198   738   749     1   294   129    16   775   371 '
+Jun 20 23:59:15.435568 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 20 23:59:15.435659 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 20 23:59:15.437072 RL00122 sensord[430]:   in0: +1.15 V
+Jun 20 23:59:15.438284 RL00122 sensord[430]:   in1: +0.00 V
+Jun 20 23:59:15.438354 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 20 23:59:15.438406 RL00122 sensord[430]: Adapter: Virtual device
+Jun 20 23:59:15.439062 RL00122 sensord[430]:   temp1: 69.5 C
+Jun 20 23:59:20.776024 RL00122 NetworkManager[667]: <info>  [1529539160.7758] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 20 23:59:33.959634 RL00122 rlc[694]: Firewall log: '[adc]   318   721   749     2   438   274    16   776   372 '
+Jun 20 23:59:39.010558 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=182295
+                                         FO=182288
+                                         FD=7
+                                         CPU Usage: 58%
+                                         Up Time: 16296     
+                                         % Mem Used(sys):39.20905
+                                         Mem Used(sys):  412389376 
+                                         Mem Free(sys):  639381504 
+                                         Mem Used(rlc):  50468     
+                                         Processes: 130       
+Jun 20 23:59:39.010643 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2841 |         2699 |         3831 |         6167 |
+                                         |    eth0 Tx |        42780 |        37907 |        56144 |        88914 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:00:03.975893 RL00122 rlc[694]: Firewall log: '[adc]   250   734   749     2   350   215    17   776   372 '
+Jun 21 00:00:15.439303 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:00:15.439346 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:00:15.443233 RL00122 sensord[430]:   in0: +1.16 V
+Jun 21 00:00:15.445681 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:00:15.445736 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:00:15.445761 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:00:15.446085 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 21 00:00:33.978788 RL00122 rlc[694]: Firewall log: '[adc]   357   713   749     2   470   304    17   778   372 '
+Jun 21 00:00:39.001148 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=183497
+                                         FO=183490
+                                         FD=7
+                                         CPU Usage: 58%
+                                         Up Time: 16356     
+                                         % Mem Used(sys):39.19503
+                                         Mem Used(sys):  412241920 
+                                         Mem Free(sys):  639528960 
+                                         Mem Used(rlc):  50512     
+                                         Processes: 130       
+Jun 21 00:00:39.003110 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3962 |         1987 |         3864 |         5900 |
+                                         |    eth0 Tx |        54307 |        35400 |        57150 |        68347 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:01:03.991404 RL00122 rlc[694]: Firewall log: '[adc]   296   725   750     1   418   240    22   776   372 '
+Jun 21 00:01:15.446304 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:01:15.446352 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:01:15.447250 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:01:15.447988 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:01:15.448035 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:01:15.448064 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:01:15.448445 RL00122 sensord[430]:   temp1: 76.8 C
+Jun 21 00:01:34.005715 RL00122 rlc[694]: Firewall log: '[adc]   289   726   749     1   389   263    18   776   372 '
+Jun 21 00:01:38.991413 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=184697
+                                         FO=184690
+                                         FD=7
+                                         CPU Usage: 56%
+                                         Up Time: 16416     
+                                         % Mem Used(sys):39.20438
+                                         Mem Used(sys):  412340224 
+                                         Mem Free(sys):  639430656 
+                                         Mem Used(rlc):  50528     
+                                         Processes: 130       
+Jun 21 00:01:38.991495 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3987 |         2261 |         3197 |         6309 |
+                                         |    eth0 Tx |        66100 |        34886 |        49616 |        86560 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:02:04.019003 RL00122 rlc[694]: Firewall log: '[adc]   315   723   749     5   428   263    17   777   372 '
+Jun 21 00:02:15.448740 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:02:15.448821 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:02:15.450291 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:02:15.451491 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:02:15.451560 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:02:15.451611 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:02:15.452260 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 21 00:02:24.975704 RL00122 kernel: wlcore: down
+Jun 21 00:02:24.976880 RL00122 kernel[377]: wlcore: down
+Jun 21 00:02:24.977289 RL00122 NetworkManager[667]: <info>  [1529539344.9770] device (wlan0): set-hw-addr: set MAC address to 42:34:C6:EB:77:BB (scanning)
+Jun 21 00:02:25.004640 RL00122 NetworkManager[667]: <info>  [1529539345.0043] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 21 00:02:25.008327 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:02:25.005615 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:02:25.103856 RL00122 NetworkManager[667]: <info>  [1529539345.1037] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 21 00:02:25.122082 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 21 00:02:34.032633 RL00122 rlc[694]: Firewall log: '[adc]   286   727   750     1   423   265    16   776   372 '
+Jun 21 00:02:38.982719 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=185897
+                                         FO=185891
+                                         FD=6
+                                         CPU Usage: 59%
+                                         Up Time: 16476     
+                                         % Mem Used(sys):39.21567
+                                         Mem Used(sys):  412459008 
+                                         Mem Free(sys):  639311872 
+                                         Mem Used(rlc):  50544     
+                                         Processes: 130       
+Jun 21 00:02:38.982825 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3457 |         2495 |         3469 |         7341 |
+                                         |    eth0 Tx |        52699 |        36729 |        52954 |        93101 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:03:04.058442 RL00122 rlc[694]: Firewall log: '[adc]   265   728   749     2   379   206    17   776   372 '
+Jun 21 00:03:15.452556 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:03:15.452647 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:03:15.454112 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:03:15.455431 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:03:15.455544 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:03:15.455600 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:03:15.456326 RL00122 sensord[430]:   temp1: 70.7 C
+Jun 21 00:03:32.117983 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:03:34.089606 RL00122 rlc[694]: Firewall log: '[adc]   279   727   750     1   392   223    15   776   372 '
+Jun 21 00:03:38.972967 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=187101
+                                         FO=187094
+                                         FD=7
+                                         CPU Usage: 57%
+                                         Up Time: 16536     
+                                         % Mem Used(sys):39.22696
+                                         Mem Used(sys):  412577792 
+                                         Mem Free(sys):  639193088 
+                                         Mem Used(rlc):  50548     
+                                         Processes: 130       
+Jun 21 00:03:38.973057 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2267 |         2267 |         3846 |         6271 |
+                                         |    eth0 Tx |        46342 |        42116 |        55790 |        91883 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:04:04.116278 RL00122 rlc[694]: Firewall log: '[adc]   199   734   749     1   288   124    21   775   371 '
+Jun 21 00:04:15.456575 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:04:15.456624 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:04:15.457872 RL00122 sensord[430]:   in0: +1.13 V
+Jun 21 00:04:15.459416 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:04:15.459466 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:04:15.459495 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:04:15.459869 RL00122 sensord[430]:   temp1: 69.5 C
+Jun 21 00:04:34.131503 RL00122 rlc[694]: Firewall log: '[adc]   240   734   749     1   338   173    19   775   371 '
+Jun 21 00:04:35.835164 RL00122 NetworkManager[667]: <info>  [1529539475.8350] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 21 00:04:38.963584 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=188302
+                                         FO=188296
+                                         FD=6
+                                         CPU Usage: 56%
+                                         Up Time: 16596     
+                                         % Mem Used(sys):39.23047
+                                         Mem Used(sys):  412614656 
+                                         Mem Free(sys):  639156224 
+                                         Mem Used(rlc):  50572     
+                                         Processes: 129       
+Jun 21 00:04:38.963667 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2495 |         2127 |         4245 |         6211 |
+                                         |    eth0 Tx |        38071 |        34685 |        59381 |        88530 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:05:04.155977 RL00122 rlc[694]: Firewall log: '[adc]   330   719   750     1   435   277    18   777   372 '
+Jun 21 00:05:15.460119 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:05:15.460180 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:05:15.465994 RL00122 sensord[430]:   in0: +1.13 V
+Jun 21 00:05:15.466861 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:05:15.466909 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:05:15.466934 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:05:15.467334 RL00122 sensord[430]:   temp1: 75.7 C
+Jun 21 00:05:34.182988 RL00122 rlc[694]: Firewall log: '[adc]   303   722   749     1   412   246    15   779   372 '
+Jun 21 00:05:38.954423 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=189502
+                                         FO=189496
+                                         FD=6
+                                         CPU Usage: 58%
+                                         Up Time: 16656     
+                                         % Mem Used(sys):39.24449
+                                         Mem Used(sys):  412762112 
+                                         Mem Free(sys):  639008768 
+                                         Mem Used(rlc):  50604     
+                                         Processes: 129       
+Jun 21 00:05:38.954508 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3611 |         2407 |         3875 |         5081 |
+                                         |    eth0 Tx |        53622 |        34642 |        55972 |        70026 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:05:40.322373 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:06:04.203239 RL00122 rlc[694]: Firewall log: '[adc]   331   720   749     2   450   277    17   777   372 '
+Jun 21 00:06:15.467593 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:06:15.467644 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:06:15.471155 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:06:15.473209 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:06:15.473264 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:06:15.473294 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:06:15.473592 RL00122 sensord[430]:   temp1: 76.3 C
+Jun 21 00:06:34.226432 RL00122 rlc[694]: Firewall log: '[adc]   280   727   749     2   386   223    18   776   372 '
+Jun 21 00:06:38.944960 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=190702
+                                         FO=190695
+                                         FD=7
+                                         CPU Usage: 59%
+                                         Up Time: 16715     
+                                         % Mem Used(sys):39.26980
+                                         Mem Used(sys):  413028352 
+                                         Mem Free(sys):  638742528 
+                                         Mem Used(rlc):  50656     
+                                         Processes: 131       
+Jun 21 00:06:38.945095 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3669 |         2267 |         3262 |         6077 |
+                                         |    eth0 Tx |        65488 |        37052 |        50621 |        91141 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:07:04.243712 RL00122 rlc[694]: Firewall log: '[adc]   296   728   749     1   424   246    18   777   372 '
+Jun 21 00:07:15.473851 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:07:15.473906 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:07:15.475016 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:07:15.475818 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:07:15.475867 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:07:15.475896 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:07:15.476259 RL00122 sensord[430]:   temp1: 75.7 C
+Jun 21 00:07:34.272618 RL00122 rlc[694]: Firewall log: '[adc]   217   737   749     1   312   146    15   775   371 '
+Jun 21 00:07:38.935237 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=191903
+                                         FO=191897
+                                         FD=6
+                                         CPU Usage: 11%
+                                         Up Time: 16775     
+                                         % Mem Used(sys):39.27954
+                                         Mem Used(sys):  413130752 
+                                         Mem Free(sys):  638640128 
+                                         Mem Used(rlc):  50676     
+                                         Processes: 130       
+Jun 21 00:07:38.935495 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         5989 |         2355 |         3542 |         5989 |
+                                         |    eth0 Tx |        90562 |        34914 |        53165 |        90562 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:07:39.985863 RL00122 kernel: wlcore: down
+Jun 21 00:07:39.985667 RL00122 kernel[377]: wlcore: down
+Jun 21 00:07:39.985940 RL00122 NetworkManager[667]: <info>  [1529539659.9851] device (wlan0): set-hw-addr: set MAC address to 96:7A:19:AA:B7:C1 (scanning)
+Jun 21 00:07:40.019039 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:07:40.018242 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:07:40.024307 RL00122 NetworkManager[667]: <info>  [1529539660.0239] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 21 00:07:40.026593 RL00122 NetworkManager[667]: <info>  [1529539660.0262] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 21 00:07:40.056436 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 21 00:08:04.291330 RL00122 rlc[694]: Firewall log: '[adc]   255   734   750     1   382   192    18   776   372 '
+Jun 21 00:08:15.476587 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:08:15.476657 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:08:15.481801 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:08:15.483353 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:08:15.483405 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:08:15.483432 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:08:15.483934 RL00122 sensord[430]:   temp1: 70.1 C
+Jun 21 00:08:34.305654 RL00122 rlc[694]: Firewall log: '[adc]   190   741   749     1   286   121    16   775   371 '
+Jun 21 00:08:38.925498 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=193105
+                                         FO=193099
+                                         FD=6
+                                         CPU Usage: 6%
+                                         Up Time: 16835     
+                                         % Mem Used(sys):39.26863
+                                         Mem Used(sys):  413016064 
+                                         Mem Free(sys):  638754816 
+                                         Mem Used(rlc):  50704     
+                                         Processes: 129       
+Jun 21 00:08:38.925570 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3189 |         2407 |         3707 |         6019 |
+                                         |    eth0 Tx |        59123 |        32171 |        56157 |        87706 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:08:47.104518 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:09:04.330397 RL00122 rlc[694]: Firewall log: '[adc]   252   733   749     2   363   196    17   775   372 '
+Jun 21 00:09:15.484232 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:09:15.484310 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:09:15.485896 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:09:15.487448 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:09:15.487526 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:09:15.487581 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:09:15.488320 RL00122 sensord[430]:   temp1: 69.0 C
+Jun 21 00:09:34.325684 RL00122 rlc[694]: Firewall log: '[adc]   237   735   748     2   349   168    19   776   371 '
+Jun 21 00:09:38.916806 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=194285
+                                         FO=194279
+                                         FD=6
+                                         CPU Usage: 11%
+                                         Up Time: 16895     
+                                         % Mem Used(sys):39.25851
+                                         Mem Used(sys):  412909568 
+                                         Mem Free(sys):  638861312 
+                                         Mem Used(rlc):  50712     
+                                         Processes: 130       
+Jun 21 00:09:38.916936 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2985 |         2516 |         3622 |         6677 |
+                                         |    eth0 Tx |        61578 |        39099 |        55605 |        96478 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:09:50.901894 RL00122 NetworkManager[667]: <info>  [1529539790.9017] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 21 00:10:04.340428 RL00122 rlc[694]: Firewall log: '[adc]   213   737   749     3   317   150    15   775   371 '
+Jun 21 00:10:15.488750 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:10:15.488805 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:10:15.490080 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:10:15.490967 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:10:15.491015 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:10:15.491047 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:10:15.491421 RL00122 sensord[430]:   temp1: 72.3 C
+Jun 21 00:10:34.353804 RL00122 rlc[694]: Firewall log: '[adc]   305   723   750     2   430   247    21   779   372 '
+Jun 21 00:10:37.117486 RL00122 systemd[1]: periodic_upgrade.service: Service hold-off time over, scheduling restart.
+Jun 21 00:10:37.122245 RL00122 systemd[1]: Stopped Period System Upgrade Check.
+Jun 21 00:10:37.124750 RL00122 systemd[1]: Started Period System Upgrade Check.
+Jun 21 00:10:38.907063 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=195489
+                                         FO=195483
+                                         FD=6
+                                         CPU Usage: 98%
+                                         Up Time: 16955     
+                                         % Mem Used(sys):39.57240
+                                         Mem Used(sys):  416210944 
+                                         Mem Free(sys):  635559936 
+                                         Mem Used(rlc):  51012     
+                                         Processes: 136       
+Jun 21 00:10:38.907148 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3553 |         1987 |         4063 |         5939 |
+                                         |    eth0 Tx |        46716 |        35020 |        58403 |        83353 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:10:39.986641 RL00122 root[6070]: Connection info eth0    ethernet  connected     wired
+Jun 21 00:10:39.989253 RL00122 upgrade_system.py[6066]: Upgrade not initiated
+Jun 21 00:11:04.372982 RL00122 rlc[694]: Firewall log: '[adc]   307   722   749     1   425   252    16   777   372 '
+Jun 21 00:11:15.491748 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:11:15.491809 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:11:15.492864 RL00122 sensord[430]:   in0: +1.13 V
+Jun 21 00:11:15.493727 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:11:15.493773 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:11:15.493797 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:11:15.494135 RL00122 sensord[430]:   temp1: 75.7 C
+Jun 21 00:11:34.394313 RL00122 rlc[694]: Firewall log: '[adc]   215   738   749     3   312   149    17   775   371 '
+Jun 21 00:11:38.898281 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=196688
+                                         FO=196682
+                                         FD=6
+                                         CPU Usage: 57%
+                                         Up Time: 17015     
+                                         % Mem Used(sys):39.34146
+                                         Mem Used(sys):  413782016 
+                                         Mem Free(sys):  637988864 
+                                         Mem Used(rlc):  51024     
+                                         Processes: 131       
+Jun 21 00:11:38.898372 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3319 |         2331 |         3303 |         4863 |
+                                         |    eth0 Tx |        36520 |        36520 |        51511 |        68619 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:12:04.425129 RL00122 rlc[694]: Firewall log: '[adc]   327   719   750     2   450   268    18   777   372 '
+Jun 21 00:12:15.494412 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:12:15.494492 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:12:15.496298 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:12:15.497514 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:12:15.497592 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:12:15.497642 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:12:15.498332 RL00122 sensord[430]:   temp1: 77.9 C
+Jun 21 00:12:34.445283 RL00122 rlc[694]: Firewall log: '[adc]   276   728   749     2   387   216    19   776   372 '
+Jun 21 00:12:38.888885 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=197890
+                                         FO=197884
+                                         FD=6
+                                         CPU Usage: 7%
+                                         Up Time: 17075     
+                                         % Mem Used(sys):39.33679
+                                         Mem Used(sys):  413732864 
+                                         Mem Free(sys):  638038016 
+                                         Mem Used(rlc):  51040     
+                                         Processes: 130       
+Jun 21 00:12:38.889014 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4871 |         2407 |         3261 |         5647 |
+                                         |    eth0 Tx |        58177 |        31904 |        50578 |        78215 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:12:54.975864 RL00122 kernel: wlcore: down
+Jun 21 00:12:54.975583 RL00122 kernel[377]: wlcore: down
+Jun 21 00:12:54.986811 RL00122 NetworkManager[667]: <info>  [1529539974.9865] device (wlan0): set-hw-addr: set MAC address to 96:BF:95:BD:84:CF (scanning)
+Jun 21 00:12:55.012605 RL00122 NetworkManager[667]: <info>  [1529539975.0123] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 21 00:12:55.019489 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:12:55.015639 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:12:55.066559 RL00122 NetworkManager[667]: <info>  [1529539975.0663] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 21 00:12:55.083821 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 21 00:13:04.461269 RL00122 rlc[694]: Firewall log: '[adc]   282   727   749     1   389   215    20   776   372 '
+Jun 21 00:13:15.498622 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:13:15.498703 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:13:15.500131 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:13:15.501335 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:13:15.501421 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:13:15.501475 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:13:15.502143 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 21 00:13:34.484622 RL00122 rlc[694]: Firewall log: '[adc]   300   725   749     1   401   240    18   777   372 '
+Jun 21 00:13:38.879747 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=199093
+                                         FO=199087
+                                         FD=6
+                                         CPU Usage: 7%
+                                         Up Time: 17135     
+                                         % Mem Used(sys):39.33990
+                                         Mem Used(sys):  413765632 
+                                         Mem Free(sys):  638005248 
+                                         Mem Used(rlc):  51056     
+                                         Processes: 128       
+Jun 21 00:13:38.879875 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2191 |         2127 |         3532 |         5785 |
+                                         |    eth0 Tx |        38221 |        33433 |        52343 |        83291 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:14:04.479379 RL00122 rlc[694]: Firewall log: '[adc]   290   728   750     1   429   254    19   777   372 '
+Jun 21 00:14:15.502494 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:14:15.502559 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:14:15.508149 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:14:15.509035 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:14:15.509086 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:14:15.509113 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:14:15.509523 RL00122 sensord[430]:   temp1: 75.1 C
+Jun 21 00:14:34.492410 RL00122 rlc[694]: Firewall log: '[adc]   288   725   749     1   408   237    15   776   372 '
+Jun 21 00:14:38.870645 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=200297
+                                         FO=200291
+                                         FD=6
+                                         CPU Usage: 12%
+                                         Up Time: 17195     
+                                         % Mem Used(sys):39.34146
+                                         Mem Used(sys):  413782016 
+                                         Mem Free(sys):  637988864 
+                                         Mem Used(rlc):  51084     
+                                         Processes: 128       
+Jun 21 00:14:38.870775 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4711 |         2325 |         3570 |         6135 |
+                                         |    eth0 Tx |        59110 |        35081 |        54023 |        85780 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:15:04.519499 RL00122 rlc[694]: Firewall log: '[adc]   218   736   749     1   315   153    15   775   371 '
+Jun 21 00:15:05.209526 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:15:05.838843 RL00122 NetworkManager[667]: <info>  [1529540105.8387] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 21 00:15:15.509809 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:15:15.509889 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:15:15.516730 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:15:15.517815 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:15:15.517885 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:15:15.517930 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:15:15.518428 RL00122 sensord[430]:   temp1: 72.9 C
+Jun 21 00:15:34.550272 RL00122 rlc[694]: Firewall log: '[adc]   285   726   749     1   396   229    17   777   372 '
+Jun 21 00:15:38.861757 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=201498
+                                         FO=201492
+                                         FD=6
+                                         CPU Usage: 55%
+                                         Up Time: 17255     
+                                         % Mem Used(sys):39.34302
+                                         Mem Used(sys):  413798400 
+                                         Mem Free(sys):  637972480 
+                                         Mem Used(rlc):  51108     
+                                         Processes: 129       
+Jun 21 00:15:38.861849 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2534 |         2127 |         3855 |         6477 |
+                                         |    eth0 Tx |        36925 |        36810 |        56791 |        91686 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:16:04.581264 RL00122 rlc[694]: Firewall log: '[adc]   301   723   750     3   416   251    20   776   372 '
+Jun 21 00:16:10.333340 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:16:15.518735 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:16:15.518796 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:16:15.523932 RL00122 sensord[430]:   in0: +1.13 V
+Jun 21 00:16:15.526219 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:16:15.526275 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:16:15.526303 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:16:15.526808 RL00122 sensord[430]:   temp1: 76.8 C
+Jun 21 00:16:34.615022 RL00122 rlc[694]: Firewall log: '[adc]   321   720   750     2   423   267    21   777   372 '
+Jun 21 00:16:38.852319 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=202701
+                                         FO=202694
+                                         FD=7
+                                         CPU Usage: 59%
+                                         Up Time: 17315     
+                                         % Mem Used(sys):39.36794
+                                         Mem Used(sys):  414060544 
+                                         Mem Free(sys):  637710336 
+                                         Mem Used(rlc):  51160     
+                                         Processes: 129       
+Jun 21 00:16:38.852418 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2477 |         2285 |         3463 |         6755 |
+                                         |    eth0 Tx |        42188 |        36951 |        53008 |        88089 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:17:04.633909 RL00122 rlc[694]: Firewall log: '[adc]   284   726   750     1   411   234    18   778   372 '
+Jun 21 00:17:15.527850 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:17:15.527907 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:17:15.528813 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:17:15.529785 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:17:15.529835 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:17:15.529868 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:17:15.530276 RL00122 sensord[430]:   temp1: 78.5 C
+Jun 21 00:17:34.644501 RL00122 rlc[694]: Firewall log: '[adc]   242   734   749     1   334   177    19   776   371 '
+Jun 21 00:17:38.843307 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=203902
+                                         FO=203895
+                                         FD=7
+                                         CPU Usage: 6%
+                                         Up Time: 17375     
+                                         % Mem Used(sys):39.36171
+                                         Mem Used(sys):  413995008 
+                                         Mem Free(sys):  637775872 
+                                         Mem Used(rlc):  51180     
+                                         Processes: 128       
+Jun 21 00:17:38.843441 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2747 |         2333 |         3244 |         5339 |
+                                         |    eth0 Tx |        38835 |        35717 |        50228 |        78783 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:18:04.669299 RL00122 rlc[694]: Firewall log: '[adc]   192   741   749     1   287   126    16   775   371 '
+Jun 21 00:18:09.975641 RL00122 kernel: wlcore: down
+Jun 21 00:18:09.975244 RL00122 NetworkManager[667]: <info>  [1529540289.9750] device (wlan0): set-hw-addr: set MAC address to DE:30:8E:55:B1:1B (scanning)
+Jun 21 00:18:09.976002 RL00122 kernel[377]: wlcore: down
+Jun 21 00:18:10.015708 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:18:10.015614 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:18:10.030110 RL00122 NetworkManager[667]: <info>  [1529540290.0298] device (wlan0): supplicant interface state: scanning -> disabled
+Jun 21 00:18:10.032479 RL00122 NetworkManager[667]: <info>  [1529540290.0322] device (wlan0): supplicant interface state: disabled -> inactive
+Jun 21 00:18:10.054419 RL00122 wpa_supplicant[720]: wlan0: Reject scan trigger since one is already pending
+Jun 21 00:18:15.530590 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:18:15.530650 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:18:15.535491 RL00122 sensord[430]:   in0: +1.16 V
+Jun 21 00:18:15.537804 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:18:15.537850 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:18:15.537878 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:18:15.538262 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 21 00:18:34.666691 RL00122 rlc[694]: Firewall log: '[adc]   251   732   749     4   346   183    15   776   372 '
+Jun 21 00:18:38.833479 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=205083
+                                         FO=205077
+                                         FD=6
+                                         CPU Usage: 9%
+                                         Up Time: 17435     
+                                         % Mem Used(sys):39.36950
+                                         Mem Used(sys):  414076928 
+                                         Mem Free(sys):  637693952 
+                                         Mem Used(rlc):  51196     
+                                         Processes: 128       
+Jun 21 00:18:38.837574 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3420 |         2127 |         3554 |         6031 |
+                                         |    eth0 Tx |        50622 |        35058 |        53546 |        78167 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:19:04.680031 RL00122 rlc[694]: Firewall log: '[adc]   236   733   749     2   337   171    17   776   372 '
+Jun 21 00:19:15.538611 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:19:15.538700 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:19:15.540463 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:19:15.541718 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:19:15.541788 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:19:15.541844 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:19:15.542433 RL00122 sensord[430]:   temp1: 70.7 C
+Jun 21 00:19:34.706321 RL00122 rlc[694]: Firewall log: '[adc]   207   738   749     1   297   133    16   775   371 '
+Jun 21 00:19:38.823833 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=206286
+                                         FO=206279
+                                         FD=7
+                                         CPU Usage: 22%
+                                         Up Time: 17495     
+                                         % Mem Used(sys):39.36483
+                                         Mem Used(sys):  414027776 
+                                         Mem Free(sys):  637743104 
+                                         Mem Used(rlc):  51232     
+                                         Processes: 128       
+Jun 21 00:19:38.823960 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         4939 |         2547 |         3935 |         6251 |
+                                         |    eth0 Tx |        66680 |        34979 |        57738 |        85318 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:20:04.725408 RL00122 rlc[694]: Firewall log: '[adc]   228   737   749     1   329   184    17   776   372 '
+Jun 21 00:20:15.542721 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:20:15.542798 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:20:15.548148 RL00122 sensord[430]:   in0: +1.16 V
+Jun 21 00:20:15.549484 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:20:15.549560 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:20:15.549609 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:20:15.550208 RL00122 sensord[430]:   temp1: 70.1 C
+Jun 21 00:20:20.071757 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:20:20.842910 RL00122 NetworkManager[667]: <info>  [1529540420.8427] device (wlan0): supplicant interface state: inactive -> scanning
+Jun 21 00:20:34.744609 RL00122 rlc[694]: Firewall log: '[adc]   294   725   749     2   413   247    16   777   372 '
+Jun 21 00:20:38.814143 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=207488
+                                         FO=207482
+                                         FD=6
+                                         CPU Usage: 59%
+                                         Up Time: 17555     
+                                         % Mem Used(sys):39.38235
+                                         Mem Used(sys):  414212096 
+                                         Mem Free(sys):  637558784 
+                                         Mem Used(rlc):  51508     
+                                         Processes: 130       
+Jun 21 00:20:38.814234 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3037 |         2337 |         3901 |         6685 |
+                                         |    eth0 Tx |        37959 |        36633 |        55354 |        88725 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:21:04.769411 RL00122 rlc[694]: Firewall log: '[adc]   213   738   749     1   330   151    16   775   371 '
+Jun 21 00:21:15.550548 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:21:15.550615 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:21:15.552225 RL00122 sensord[430]:   in0: +1.11 V
+Jun 21 00:21:15.553051 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:21:15.553099 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:21:15.553127 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:21:15.553462 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 21 00:21:34.759063 RL00122 rlc[694]: Firewall log: '[adc]   310   722   750     3   414   249    16   776   372 '
+Jun 21 00:21:38.804415 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=208689
+                                         FO=208683
+                                         FD=6
+                                         CPU Usage: 57%
+                                         Up Time: 17615     
+                                         % Mem Used(sys):39.37378
+                                         Mem Used(sys):  414121984 
+                                         Mem Free(sys):  637648896 
+                                         Mem Used(rlc):  51540     
+                                         Processes: 130       
+Jun 21 00:21:38.804492 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2961 |         2376 |         3761 |         5663 |
+                                         |    eth0 Tx |        40283 |        35854 |        54478 |        85195 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:22:04.773603 RL00122 rlc[694]: Firewall log: '[adc]   269   729   749     3   388   210    20   776   372 '
+Jun 21 00:22:15.553711 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:22:15.553767 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:22:15.555584 RL00122 sensord[430]:   in0: +1.13 V
+Jun 21 00:22:15.556360 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:22:15.556402 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:22:15.556430 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:22:15.556764 RL00122 sensord[430]:   temp1: 76.3 C
+Jun 21 00:22:34.794958 RL00122 rlc[694]: Firewall log: '[adc]   276   726   750     2   382   229    18   777   372 '
+Jun 21 00:22:38.795099 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=209888
+                                         FO=209882
+                                         FD=6
+                                         CPU Usage: 58%
+                                         Up Time: 17675     
+                                         % Mem Used(sys):39.39053
+                                         Mem Used(sys):  414298112 
+                                         Mem Free(sys):  637472768 
+                                         Mem Used(rlc):  51564     
+                                         Processes: 130       
+Jun 21 00:22:38.795189 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2547 |         2547 |         3278 |         5961 |
+                                         |    eth0 Tx |        39172 |        36055 |        50504 |        72355 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:23:04.814814 RL00122 rlc[694]: Firewall log: '[adc]   286   727   750     2   388   226    16   777   372 '
+Jun 21 00:23:15.557038 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:23:15.557116 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:23:15.561620 RL00122 sensord[430]:   in0: +1.16 V
+Jun 21 00:23:15.565220 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:23:15.565286 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:23:15.565577 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:23:15.566129 RL00122 sensord[430]:   temp1: 73.5 C
+Jun 21 00:23:24.982568 RL00122 NetworkManager[667]: <info>  [1529540604.9822] device (wlan0): set-hw-addr: set MAC address to 5E:88:E1:5C:15:5D (scanning)
+Jun 21 00:23:24.986828 RL00122 kernel: wlcore: down
+Jun 21 00:23:24.985652 RL00122 kernel[377]: wlcore: down
+Jun 21 00:23:25.005716 RL00122 kernel: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:23:25.005521 RL00122 kernel[377]: IPv6: ADDRCONF(NETDEV_UP): wlan0: link is not ready
+Jun 21 00:23:34.838930 RL00122 rlc[694]: Firewall log: '[adc]   363   713   750     1   501   324    21   778   372 '
+Jun 21 00:23:38.786087 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=211090
+                                         FO=211084
+                                         FD=6
+                                         CPU Usage: 57%
+                                         Up Time: 17735     
+                                         % Mem Used(sys):39.35704
+                                         Mem Used(sys):  413945856 
+                                         Mem Free(sys):  637825024 
+                                         Mem Used(rlc):  51612     
+                                         Processes: 130       
+Jun 21 00:23:38.786172 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2897 |         2197 |         3625 |         4894 |
+                                         |    eth0 Tx |        45447 |        35369 |        52684 |        81077 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:24:04.835155 RL00122 rlc[694]: Firewall log: '[adc]   318   721   750     2   419   263    18   777   372 '
+Jun 21 00:24:15.566384 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:24:15.566433 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:24:15.570738 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:24:15.572734 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:24:15.572772 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:24:15.572797 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:24:15.573091 RL00122 sensord[430]:   temp1: 76.8 C
+Jun 21 00:24:34.354710 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:24:34.849027 RL00122 rlc[694]: Firewall log: '[adc]   343   716   750     2   470   274    16   777   372 '
+Jun 21 00:24:38.777276 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=212290
+                                         FO=212284
+                                         FD=6
+                                         CPU Usage: 98%
+                                         Up Time: 17795     
+                                         % Mem Used(sys):39.36560
+                                         Mem Used(sys):  414035968 
+                                         Mem Free(sys):  637734912 
+                                         Mem Used(rlc):  51624     
+                                         Processes: 128       
+Jun 21 00:24:38.777362 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2464 |         2425 |         3198 |         4273 |
+                                         |    eth0 Tx |        41927 |        33438 |        49464 |        70606 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:25:04.883261 RL00122 rlc[694]: Firewall log: '[adc]   306   722   749     2   431   258    21   777   372 '
+Jun 21 00:25:15.573367 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:25:15.573419 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:25:15.578412 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:25:15.580198 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:25:15.580252 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:25:15.580282 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:25:15.580779 RL00122 sensord[430]:   temp1: 78.5 C
+Jun 21 00:25:34.903649 RL00122 rlc[694]: Firewall log: '[adc]   257   734   749     1   375   210    16   776   372 '
+Jun 21 00:25:38.768372 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=213494
+                                         FO=213487
+                                         FD=7
+                                         CPU Usage: 60%
+                                         Up Time: 17855     
+                                         % Mem Used(sys):39.38547
+                                         Mem Used(sys):  414244864 
+                                         Mem Free(sys):  637526016 
+                                         Mem Used(rlc):  51656     
+                                         Processes: 129       
+Jun 21 00:25:38.768459 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2617 |         2337 |         3213 |         5657 |
+                                         |    eth0 Tx |        43874 |        38054 |        49858 |        83705 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:26:04.908405 RL00122 rlc[694]: Firewall log: '[adc]   363   713   750     1   492   317    17   778   372 '
+Jun 21 00:26:15.581087 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:26:15.581165 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:26:15.582724 RL00122 sensord[430]:   in0: +1.14 V
+Jun 21 00:26:15.584089 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:26:15.584161 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:26:15.584206 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:26:15.584835 RL00122 sensord[430]:   temp1: 74.6 C
+Jun 21 00:26:34.449322 RL00122 wpa_supplicant[720]: nl80211: send_and_recv->nl_recvmsgs failed: -33
+Jun 21 00:26:34.922637 RL00122 rlc[694]: Firewall log: '[adc]   322   720   750     1   446   262    21   777   372 '
+Jun 21 00:26:38.758701 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=214695
+                                         FO=214689
+                                         FD=6
+                                         CPU Usage: 56%
+                                         Up Time: 17915     
+                                         % Mem Used(sys):39.36677
+                                         Mem Used(sys):  414048256 
+                                         Mem Free(sys):  637722624 
+                                         Mem Used(rlc):  51688     
+                                         Processes: 129       
+Jun 21 00:26:38.758786 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         2395 |         2257 |         3329 |         8175 |
+                                         |    eth0 Tx |        44343 |        34590 |        51206 |        92396 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:27:04.941569 RL00122 rlc[694]: Firewall log: '[adc]   322   721   750     2   446   263    22   777   372 '
+Jun 21 00:27:15.585167 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:27:15.585250 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:27:15.588415 RL00122 sensord[430]:   in0: +1.12 V
+Jun 21 00:27:15.589750 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:27:15.589830 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:27:15.589881 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:27:15.590442 RL00122 sensord[430]:   temp1: 75.7 C
+Jun 21 00:27:34.966003 RL00122 rlc[694]: Firewall log: '[adc]   305   723   750     3   437   255    16   777   372 '
+Jun 21 00:27:38.748818 RL00122 rlc[694]: RLM RL00122 Connection Status
+                                         AM=2
+                                         AS=STATE_started
+                                         CS=STATE_connected
+                                         SS=STATE_established
+                                         VS=STATE_high_quality
+                                         AB=Ethernet
+                                         IP=192.168.128.37
+                                         FI=215898
+                                         FO=215892
+                                         FD=6
+                                         CPU Usage: 58%
+                                         Up Time: 17975     
+                                         % Mem Used(sys):39.37495
+                                         Mem Used(sys):  414134272 
+                                         Mem Free(sys):  637636608 
+                                         Mem Used(rlc):  51720     
+                                         Processes: 130       
+Jun 21 00:27:38.748895 RL00122 rlc[694]: Network Statistics (Bytes/sec)
+                                         |       Type |          Msd |          Min |         Mean |          Max |
+                                         |------------------------------------------------------------------------+
+                                         |    eth0 Rx |         3037 |         2337 |         3823 |         6221 |
+                                         |    eth0 Tx |        63567 |        37019 |        54801 |        77998 |
+                                         |   wlan0 Rx |            0 |            0 |            0 |            0 |
+                                         |   wlan0 Tx |            0 |            0 |            0 |            0 |
+Jun 21 00:28:04.990977 RL00122 rlc[694]: Firewall log: '[adc]   326   719   750     1   432   275    22   777   372 '
+Jun 21 00:28:14.450522 RL00122 rrdcached[379]: flushing old values
+Jun 21 00:28:15.590732 RL00122 sensord[430]: Chip: ads7846-spi-2-0
+Jun 21 00:28:15.590812 RL00122 sensord[430]: Adapter: SPI adapter
+Jun 21 00:28:15.596496 RL00122 sensord[430]:   in0: +1.15 V
+Jun 21 00:28:15.597844 RL00122 sensord[430]:   in1: +0.00 V
+Jun 21 00:28:15.597920 RL00122 sensord[430]: Chip: imx_thermal_zone-virtual-0
+Jun 21 00:28:15.597973 RL00122 sensord[430]: Adapter: Virtual device
+Jun 21 00:28:15.598531 RL00122 sensord[430]:   temp1: 73.5 C
+Jun 21 00:28:33.117510 RL00122 systemd[1]: periodic_journal.service: Service hold-off time over, scheduling restart.
+Jun 21 00:28:33.125648 RL00122 systemd[1]: Stopped Periodc journal file creation.
+Jun 21 00:28:33.132850 RL00122 systemd[1]: Started Periodc journal file creation.
+Jun 21 00:28:33.290644 RL00122 root[6151]: Journal Dir 772b895a9fbb4a71b39ec108e62fb4c3
+Jun 21 00:28:33.309157 RL00122 root[6152]: File system@00056ed014b2dba1-8066a02e47c8ed9a.journal~ Size 8388608
+Jun 21 00:28:33.323442 RL00122 root[6153]: File system@00056ee6a027e53e-539a150f8d2a3e69.journal~ Size 8388608
+Jun 21 00:28:33.338911 RL00122 root[6154]: File system@cfcf705665114820adfea222856bf631-0000000000000001-00056eb877a3ebe3.journal Size 16777216
+Jun 21 00:28:33.354349 RL00122 root[6155]: File system.journal Size 33554432
+Jun 21 00:28:33.368474 RL00122 root[6156]: File system@00056e76737caaba-0bc45decc7de5d09.journal~ Size 8388608
+Jun 21 00:28:33.382443 RL00122 root[6157]: File system@00056ed8db6e7665-797e61548653c07b.journal~ Size 16777216
+Jun 21 00:28:33.398344 RL00122 root[6158]: File system@00056efdb4e192a8-6bf68efb63f91d57.journal~ Size 25165824
+Jun 21 00:28:33.412737 RL00122 root[6159]: File user-65534@51d5437ad4c84ec7b448b02531a07200-000000000000f56c-00056ecc63c6299d.journal Size 8388608
+Jun 21 00:28:33.427105 RL00122 root[6160]: File system@00056eb387c1a04e-87d5562a6957f93e.journal~ Size 8388608
+Jun 21 00:28:33.443459 RL00122 root[6161]: File user-65534@51d5437ad4c84ec7b448b02531a07200-00000000000013b3-00056e575f5b1338.journal Size 8388608
+Jun 21 00:28:33.457869 RL00122 root[6162]: File system@00056f15df183e2f-f8236a7c5dd95954.journal~ Size 8388608
+Jun 21 00:28:33.472347 RL00122 root[6163]: File system@00056ee3bd914b80-fee63128428b22e5.journal~ Size 25165824
+Jun 21 00:28:33.488583 RL00122 root[6164]: File system@00056e575f349d96-468f25f6640e476a.journal~ Size 50331648
+Jun 21 00:28:33.503083 RL00122 root[6165]: File system@00056eea76425185-19b8d6c6c209ba45.journal~ Size 8388608
+Jun 21 00:28:33.517418 RL00122 root[6166]: File system@0b051d72dacf46debabb7515102e081c-0000000000000001-00056e712511ec99.journal Size 16777216
+Jun 21 00:28:33.533033 RL00122 root[6167]: File system@00056eb1168bf86e-2d91b33c226fa47b.journal~ Size 25165824
+Jun 21 00:28:33.551644 RL00122 root[6168]: File system@00056e9b323ee552-5443363c0f2537a2.journal~ Size 8388608
+Jun 21 00:28:33.568729 RL00122 root[6169]: File system@00056e6852987e2b-98730577c67bbc21.journal~ Size 16777216
+Jun 21 00:28:33.583330 RL00122 root[6170]: File system@00056f17ccaa56cf-4e43dd5e15bdc126.journal~ Size 16777216
+Jun 21 00:28:33.598298 RL00122 root[6171]: File system@00056e88e27aaaf7-8c0282cde13948ed.journal~ Size 8388608
+Jun 21 00:28:33.612589 RL00122 root[6172]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000001254-00056e2fb8f1b855.journal Size 8388608
+Jun 21 00:28:33.628627 RL00122 root[6173]: File system@00056ef235baa317-964219d0b4008d1a.journal~ Size 16777216
+Jun 21 00:28:33.643466 RL00122 root[6174]: File system@00056e99bccb14c7-4ef82de321f73826.journal~ Size 41943040
+Jun 21 00:28:33.657659 RL00122 root[6175]: File system@2c0f1e4b4d8d492fbb115b0a24931041-0000000000000001-00056e2fb88c7ad9.journal Size 52428800
+Jun 21 00:28:33.677715 RL00122 root[6176]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000001a6e-00056e7673a628b4.journal Size 8388608
+Jun 21 00:28:33.692939 RL00122 root[6177]: File system@00056ecc6386cba1-028db97889553280.journal~ Size 50331648
+Jun 21 00:28:33.711509 RL00122 root[6178]: File system@b2d4bc02f12d4000991f9c96e9a42e2e-0000000000000001-00056e0f0548cb74.journal Size 41943040
+Jun 21 00:28:33.730174 RL00122 root[6179]: File system@00056ea0753ebdf1-4b29540791ed2c02.journal~ Size 16777216
+Jun 21 00:28:33.747103 RL00122 root[6180]: File system@00056e8424c628b6-c317df72d3201f2b.journal~ Size 8388608
+Jun 21 00:28:33.762272 RL00122 root[6181]: File system@00056e82820bd132-bdb3cf0fca49d783.journal~ Size 25165824
+Jun 21 00:28:33.778287 RL00122 root[6182]: File system@00056ed3d83d4254-e046c867e0198e68.journal~ Size 8388608
+Jun 21 00:28:33.792752 RL00122 root[6183]: File user-65534.journal Size 8388608
+Jun 21 00:28:33.807066 RL00122 root[6184]: File system@00056e2fb8b7f8e6-99f61613cbf5e137.journal~ Size 16777216
+Jun 21 00:28:33.823554 RL00122 root[6185]: File system@00056ea5c379c80c-a87e848e0ea23de1.journal~ Size 16777216
+Jun 21 00:28:33.838093 RL00122 root[6186]: File user-65534@51d5437ad4c84ec7b448b02531a07200-0000000000000339-00056e0efbb31d63.journal Size 8388608
+Jun 21 00:28:33.852356 RL00122 root[6187]: File system@00056e88b7626da2-fd6b99a17b6947bd.journal~ Size 16777216
+Jun 21 00:28:33.869440 RL00122 root[6188]: File system@1d4fb8e3e00b4d16aaf4fc8f92d22098-0000000000000001-00056efdb4b4104d.journal Size 52428800
+Jun 21 00:28:33.886208 RL00122 root[6189]: File system@00056e9b70345436-7828cab511bb0235.journal~ Size 8388608
+Jun 21 00:28:33.900382 RL00122 root[6190]: File system@00056e627dd1a21f-871a3b04d703851b.journal~ Size 16777216
+Jun 21 00:28:33.929026 RL00122 root[6192]: Cleaned up backup logs older than 7 days from /var/rlm/journal/
