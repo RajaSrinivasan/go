@@ -35,21 +35,25 @@ func ShowCPUTemp() {
 	}
 }
 
-func PlotCPUTemp(fn string, ft time.Time) {
+func PlotCPUTemp(fn string, title string) {
 	p, err := plot.New()
 	if err != nil {
 		fmt.Printf("%v\n", err)
 		return
 	}
 
-	p.Title.Text = "CPU Temperatures: " + fn
-	p.X.Label.Text = "Time"
+	p.Title.Text = title + " CPU Temperatures "
+	p.X.Label.Text = "Time (secs)"
 	p.Y.Label.Text = "Temperature deg C"
-	p.Y.Min = 50
+	p.Y.Min = 75
 	p.Y.Max = 105
+
+	if Verbose {
+		fmt.Printf("Plotting %d Temperature Samples\n", len(CPUTempSamples))
+	}
 	pts := make(plotter.XYs, len(CPUTempSamples))
 	for i := range pts {
-		pts[i].X = float64(CPUTempSamples[i].attime.Sub(ft) / time.Second)
+		pts[i].X = float64(CPUTempSamples[i].attime.Sub(CPUTempSamples[0].attime) / time.Second)
 		pts[i].Y = float64(CPUTempSamples[i].temperature)
 	}
 
@@ -60,7 +64,7 @@ func PlotCPUTemp(fn string, ft time.Time) {
 	}
 
 	// Save the plot to a PNG file.
-	if err := p.Save(8*vg.Inch, 4*vg.Inch, "temp.png"); err != nil {
+	if err := p.Save(8*vg.Inch, 4*vg.Inch, fn); err != nil {
 		panic(err)
 	}
 

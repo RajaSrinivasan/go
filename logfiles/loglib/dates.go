@@ -28,7 +28,9 @@ func ParseId(id string) (time.Time, error) {
 	yys, _ := strconv.Atoi(id[0:4])
 	mms, _ := strconv.Atoi(id[4:6])
 	dds, _ := strconv.Atoi(id[6:8])
-	fmt.Printf("%d %d %d\n", yys, mms, dds)
+	if Verbose {
+		fmt.Printf("%d %d %d\n", yys, mms, dds)
+	}
 	return time.Date(yys, time.Month(mms), dds, 0, 0, 0, 0, time.UTC), nil
 }
 func TodayId() string {
@@ -46,13 +48,17 @@ func PreviousDateId(t time.Time) string {
 func DateOfLogfile(fn string) (time.Time, error) {
 	bn := path.Base(fn)
 	if logfileName.MatchString(bn) {
-		fmt.Printf("File name %s is in the right format\n", bn)
+		if Verbose {
+			fmt.Printf("File name %s is in the right format\n", bn)
+		}
 		yyyymmdd := logfileName.FindStringSubmatch(bn)
 		fmt.Printf("Date of log %s\n", yyyymmdd[1])
 		year, _ := strconv.Atoi(yyyymmdd[1][0:4])
 		month, _ := strconv.Atoi(yyyymmdd[1][4:6])
 		date, _ := strconv.Atoi(yyyymmdd[1][6:8])
-		fmt.Printf("Year %d Month %d Date %d\n", year, month, date)
+		if Verbose {
+			fmt.Printf("Year %d Month %d Date %d\n", year, month, date)
+		}
 		return time.Date(year, time.Month(month), date, 0, 0, 0, 0, time.UTC), nil
 	}
 	fmt.Printf("File name %s is not named as expected\n", bn)

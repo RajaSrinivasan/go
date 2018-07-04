@@ -10,6 +10,8 @@ import (
 	"time"
 )
 
+var Verbose bool = false
+
 const (
 	AM = 1 + iota
 	AS
@@ -75,7 +77,6 @@ func ExtractCPUTemp(line string) (bool, time.Time, float32) {
 	if cpuTemp.MatchString(line) {
 		at, _ := ExtractTimeStamp(line)
 		ts := cpuTemp.FindStringSubmatch(line)
-		fmt.Printf("%s\n", ts[1])
 		tv, _ := strconv.ParseFloat(ts[1], 32)
 		return true, at, float32(tv)
 	}
@@ -124,10 +125,15 @@ func AnalyzeFile(fn string) {
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
+		if Verbose {
+			fmt.Printf("%s\n", line)
+		}
 		if connectionStatus {
 			found, valtype, valstr := ConnectionStatusDetailLine(line)
 			if found {
-				fmt.Printf("Time %v : Type : %s Value %s\n", connectionStatusTime, itemStatusLine[valtype], valstr)
+				if Verbose {
+					fmt.Printf("Time %v : Type : %s Value %s\n", connectionStatusTime, itemStatusLine[valtype], valstr)
+				}
 			} else {
 				connectionStatus = false
 			}
@@ -139,7 +145,9 @@ func AnalyzeFile(fn string) {
 				if firstTimeStampTemp == nullTime {
 					firstTimeStampTemp = acttime
 				}
-				fmt.Printf("Time %v : Type : CPU Temp Value %f\n", OffsetYear(attime, basetime), temp)
+				if Verbose {
+					fmt.Printf("Time %v : Type : CPU Temp Value %f\n", OffsetYear(attime, basetime), temp)
+				}
 			} else {
 				found, attime := ConnectionStatusLine(line)
 				if found {
@@ -152,5 +160,5 @@ func AnalyzeFile(fn string) {
 	if err := scanner.Err(); err != nil {
 		fmt.Printf("Error: File: %s %s", fn, err)
 	}
-	PlotCPUTemp(fn, firstTimeStampTemp)
+
 }
