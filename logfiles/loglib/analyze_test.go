@@ -60,6 +60,5 @@ func TestConnectionStatusDetailLine(t *testing.T) {
 
 func TestAnalyzeFile(t *testing.T) {
 	AnalyzeFile("../20180621_0028.log")
-	ts, _ := DateOfLogfile("../20180621_0028.log")
-	PlotCPUTemp("cputemp.png", ts)
+	PlotCPUTemp("cputemp.png", "June 21, 2018")
 }
