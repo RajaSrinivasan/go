@@ -1,20 +1,23 @@
-package loglib
+package logfiles
 
 import (
 	"errors"
 	"fmt"
+	"log"
 	"path"
 	"regexp"
 	"strconv"
 	"time"
 )
 
+var nullTime time.Time
+
 var logfileName *regexp.Regexp
 var zippedlogs *regexp.Regexp
 
 func init() {
 	logfileName = regexp.MustCompile("([0-9]{8})_[0-9]{4}.log")
-	zippedlogs = regexp.MustCompile("([0-9]{8}).zip")
+	zippedlogs = regexp.MustCompile("([0-9]*).zip")
 }
 
 func DateId(t time.Time) string {
@@ -51,18 +54,11 @@ func PreviousDateId(t time.Time) string {
 func DateOfLogfile(fn string) (time.Time, error) {
 	bn := path.Base(fn)
 	if logfileName.MatchString(bn) {
-		if Verbose {
-			fmt.Printf("File name %s is in the right format\n", bn)
-		}
+		log.Printf("File name %s is in the right format\n", bn)
 		yyyymmdd := logfileName.FindStringSubmatch(bn)
 		fmt.Printf("Date of log %s\n", yyyymmdd[1])
-		year, _ := strconv.Atoi(yyyymmdd[1][0:4])
-		month, _ := strconv.Atoi(yyyymmdd[1][4:6])
-		date, _ := strconv.Atoi(yyyymmdd[1][6:8])
-		if Verbose {
-			fmt.Printf("Year %d Month %d Date %d\n", year, month, date)
-		}
-		return time.Date(year, time.Month(month), date, 0, 0, 0, 0, time.UTC), nil
+		zdt, err := time.Parse("20060102", yyyymmdd[1])
+		return zdt, err
 	}
 	fmt.Printf("File name %s is not named as expected\n", bn)
 	return nullTime, errors.New("File name syntax incorrect")
@@ -76,13 +72,8 @@ func DateOfZippedLogs(fn string) (time.Time, error) {
 		}
 		yyyymmdd := zippedlogs.FindStringSubmatch(bn)
 		fmt.Printf("Date of log %s\n", yyyymmdd[1])
-		year, _ := strconv.Atoi(yyyymmdd[1][0:4])
-		month, _ := strconv.Atoi(yyyymmdd[1][4:6])
-		date, _ := strconv.Atoi(yyyymmdd[1][6:8])
-		if Verbose {
-			fmt.Printf("Year %d Month %d Date %d\n", year, month, date)
-		}
-		return time.Date(year, time.Month(month), date, 0, 0, 0, 0, time.UTC), nil
+		zdt, err := time.Parse("20060102", yyyymmdd[1])
+		return zdt, err
 	}
 	fmt.Printf("File name %s is not named as expected\n", bn)
 	return nullTime, errors.New("File name syntax incorrect")

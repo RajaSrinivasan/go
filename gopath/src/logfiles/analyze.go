@@ -1,16 +1,14 @@
-package loglib
+package logfiles
 
 import (
 	"bufio"
 	"fmt"
-	"os"
+	"io"
 	"regexp"
 	"strconv"
 	"strings"
 	"time"
 )
-
-var Verbose bool = false
 
 const (
 	AM = 1 + iota
@@ -31,6 +29,25 @@ const (
 	Mem_Used_rlc
 	Processes
 )
+
+var itemNames = [...]string{
+	"AM",
+	"AS",
+	"CS",
+	"SS",
+	"VS",
+	"AB",
+	"IP",
+	"FI",
+	"FO",
+	"FD",
+	"CPU_Usage",
+	"Up_Time",
+	"Pct_Mem_Used_sys",
+	"Mem_Used_sys",
+	"Mem_Free_sys",
+	"Mem_Used_rlc",
+	"Processes"}
 
 var itemStatusLine = [...]string{
 	"AM=",
@@ -53,15 +70,49 @@ var itemStatusLine = [...]string{
 
 const TimeStampLength = 22
 
-var nullTime time.Time
 var cpuTemp *regexp.Regexp
 var blankTimeStamp string
+var gatheredStats []*Series
+var cpuTempStats *Series
 
 func init() {
 	nullTime = time.Now()
 	cpuTemp = regexp.MustCompile("sensord.*temp1: (.*) C")
-
 	blankTimeStamp = strings.Repeat(" ", TimeStampLength)
+	gatheredStats = make([]*Series, Processes)
+}
+
+func ValidItem(nm string) bool {
+	for _, opt := range itemNames {
+		if nm == opt {
+			return true
+		}
+	}
+	return false
+}
+func ShowValidItems() {
+	for _, opt := range itemNames {
+		fmt.Printf("%s\n", opt)
+	}
+}
+func Index(nm string) int {
+	for i, opt := range itemNames {
+		if nm == opt {
+			return i + 1
+		}
+	}
+	return 0
+}
+
+func SetupStats(nm string) {
+	if ValidItem(nm) {
+		gatheredStats[Index(nm)] = New(nm)
+	} else {
+		if nm == "CPUTemp" {
+			cpuTempStats = New("CPUTemp")
+			cpuTempStats.SetRange(75, 100)
+		}
+	}
 }
 
 func ExtractTimeStamp(line string) (time.Time, error) {
@@ -103,27 +154,13 @@ func ConnectionStatusDetailLine(line string) (bool, int, string) {
 	return false, 0, ""
 }
 
-func AnalyzeFile(fn string) {
+func AnalyzeFile(rdr io.Reader, base time.Time) {
 
-	file, err := os.Open(fn)
-	if err != nil {
-		fmt.Printf("Error: File: %s %s\n", fn, err)
-		return
-	}
-	defer file.Close()
-
-	ts, err := DateOfLogfile(fn)
-	basetime := time.Now()
-	if err != nil {
-		fmt.Printf("File name syntax does not conform to logile name syntax\n")
-	} else {
-		basetime = ts
-	}
-
-	var firstTimeStampTemp time.Time = nullTime
 	var connectionStatus bool = false
 	var connectionStatusTime time.Time
-	scanner := bufio.NewScanner(file)
+	var tempSample Sample
+
+	scanner := bufio.NewScanner(rdr)
 	for scanner.Scan() {
 		line := scanner.Text()
 		if Verbose {
@@ -132,6 +169,12 @@ func AnalyzeFile(fn string) {
 		if connectionStatus {
 			found, valtype, valstr := ConnectionStatusDetailLine(line)
 			if found {
+				if gatheredStats[valtype] != nil {
+					tempSample.At = connectionStatusTime
+					val, _ := strconv.ParseFloat(valstr, 32)
+					tempSample.Value = float32(val)
+					gatheredStats[valtype].Add(tempSample)
+				}
 				if Verbose {
 					fmt.Printf("Time %v : Type : %s Value %s\n", connectionStatusTime, itemStatusLine[valtype], valstr)
 				}
@@ -141,13 +184,14 @@ func AnalyzeFile(fn string) {
 		} else {
 			found, attime, temp := ExtractCPUTemp(line)
 			if found {
-				acttime := OffsetYear(attime, basetime)
-				AddCPUTemp(acttime, temp)
-				if firstTimeStampTemp == nullTime {
-					firstTimeStampTemp = acttime
+				attime := OffsetYear(attime, base)
+				if cpuTempStats != nil {
+					tempSample.At = attime
+					tempSample.Value = temp
+					cpuTempStats.Add(tempSample)
 				}
 				if Verbose {
-					fmt.Printf("Time %v : Type : CPU Temp Value %f\n", OffsetYear(attime, basetime), temp)
+					fmt.Printf("Time %v : Type : CPU Temp Value %f\n", attime, temp)
 				}
 			} else {
 				found, attime := ConnectionStatusLine(line)
@@ -158,8 +202,4 @@ func AnalyzeFile(fn string) {
 			}
 		}
 	}
-	if err := scanner.Err(); err != nil {
-		fmt.Printf("Error: File: %s %s", fn, err)
-	}
-
 }
