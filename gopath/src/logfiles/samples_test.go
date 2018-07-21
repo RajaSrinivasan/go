@@ -1,6 +1,8 @@
 package logfiles
 
 import (
+	"fmt"
+	"math/rand"
 	"testing"
 	"time"
 )
@@ -18,4 +20,15 @@ func TestAdd(t *testing.T) {
 		time.Sleep(1e8)
 	}
 	ser2.show()
+}
+
+func TestRange(t *testing.T) {
+	ser3 := New("Ser3")
+	for i := 0; i < 100; i++ {
+		newsamp := Sample{time.Now(), rand.Float32()}
+		ser3.Add(newsamp)
+		time.Sleep(1e8)
+	}
+	min, max := ser3.Range()
+	fmt.Printf("Min %f Max %f\n", min, max)
 }

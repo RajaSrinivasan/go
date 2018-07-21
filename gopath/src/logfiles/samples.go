@@ -32,6 +32,22 @@ func (ser *Series) Add(s Sample) {
 	ser.Samples = append(ser.Samples, s)
 }
 
+func (ser *Series) Range() (float64, float64) {
+	var minv float32
+	var maxv float32
+	minv = ser.Samples[0].Value
+	maxv = minv
+	for _, v := range ser.Samples {
+		if v.Value > maxv {
+			maxv = v.Value
+		}
+		if v.Value < minv {
+			minv = v.Value
+		}
+	}
+	return float64(minv), float64(maxv)
+}
+
 func (ser *Series) SetRange(min float64, max float64) {
 	ser.Min = min
 	ser.Max = max

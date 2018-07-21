@@ -7,6 +7,7 @@ import (
 	"os"
 	"path/filepath"
 	"regexp"
+	"sort"
 	"strings"
 )
 
@@ -20,12 +21,13 @@ func init() {
 }
 
 func analyzeZipFile(fn string) {
+	var filenames []string
 	zipdate, err := DateOfZippedLogs(fn)
 	if err != nil {
 		log.Fatal(err)
 	}
 	log.Printf("Analyzing zip file of %s\n", zipdate.Format("Jan 2 2006"))
-
+	zipdate = zipdate.AddDate(0, 0, -1)
 	reader, err := zip.OpenReader(fn)
 	if err != nil {
 		log.Fatal(err)
@@ -33,23 +35,31 @@ func analyzeZipFile(fn string) {
 	defer reader.Close()
 
 	for _, file := range reader.File {
-		fmt.Printf("%30s Size %10d Compressed %10d CRC %10x\n",
-			file.Name,
-			file.UncompressedSize,
-			file.CompressedSize,
-			file.CRC32)
+		if Verbose {
+			fmt.Printf("%30s Size %10d Compressed %10d CRC %10x\n",
+				file.Name,
+				file.UncompressedSize,
+				file.CompressedSize,
+				file.CRC32)
+		}
 		if strings.Contains(file.Name, "stats.log") {
-			log.Printf("Skipping %s\n", file.Name)
+			if Verbose {
+				log.Printf("Skipping %s\n", file.Name)
+			}
 		} else {
-			zrdr, _ := file.Open()
-			defer zrdr.Close()
-			AnalyzeFile(zrdr, zipdate)
-			//o.CopyN(os.Stdout, zrdr, 128)
-			//fmt.Println("")
-			//scanner := bufio.NewScanner(zrdr)
-			//scanner.Scan()
-			//fmt.Println(scanner.Text())
-			//zrdr.Close()
+			filenames = append(filenames, file.Name)
+		}
+	}
+	sort.Strings(filenames)
+
+	for _, fn := range filenames {
+		for _, zfile := range reader.File {
+			if zfile.Name == fn {
+				zrdr, _ := zfile.Open()
+				defer zrdr.Close()
+				fdate, _ := DateOfLogfile(zfile.Name)
+				AnalyzeFile(zrdr, fdate)
+			}
 		}
 	}
 }

@@ -21,9 +21,9 @@ func (ser *Series) Plot(fn string, title string) {
 	p.Title.Text = title
 	p.X.Label.Text = "Time (secs)"
 	p.Y.Label.Text = ser.Name
-	p.Y.Min = ser.Min
-	p.Y.Max = ser.Max
 
+	p.Y.Min, p.Y.Max = ser.Range()
+	fmt.Printf("Min %f Max %f\n", p.Y.Min, p.Y.Max)
 	pts := make(plotter.XYs, len(ser.Samples))
 	for i := range pts {
 		pts[i].X = float64(ser.Samples[i].At.Sub(ser.Samples[0].At) / time.Second)
