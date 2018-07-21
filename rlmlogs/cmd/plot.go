@@ -44,9 +44,12 @@ func execPlotCmd(cmd *cobra.Command, args []string) {
 	if Verbose {
 		fmt.Printf("Diag Variables: %s\n", RtDiagVar)
 	}
-	if len(RtDiagOptions) > 0 {
+	if len(RtDiagVar) > 0 {
 		RtDiagOptions = strings.Split(RtDiagVar, ",")
 		for _, opt := range RtDiagOptions {
+			if Verbose {
+				fmt.Printf("Analyzing %s\n", opt)
+			}
 			if logfiles.ValidItem(opt) {
 				fmt.Printf("\t%s\n", opt)
 				logfiles.SetupStats(opt)

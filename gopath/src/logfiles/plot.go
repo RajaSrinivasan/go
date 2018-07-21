@@ -30,7 +30,7 @@ func (ser *Series) Plot(fn string, title string) {
 		pts[i].Y = float64(ser.Samples[i].Value)
 	}
 
-	err = plotutil.AddLinePoints(p, "Temp", pts)
+	err = plotutil.AddLinePoints(p, ser.Name, pts)
 	if err != nil {
 		fmt.Printf("%v\n", err)
 		return

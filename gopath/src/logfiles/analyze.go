@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	AM = 1 + iota
+	AM = iota
 	AS
 	CS
 	SS
@@ -68,6 +68,26 @@ var itemStatusLine = [...]string{
 	"Mem Used(rlc):",
 	"Processes:"}
 
+/*
+	Jun 20 23:29:39.289159 RL00122 rlc[694]: RLM RL00122 Connection Status
+	                                         AM=2
+	                                         AS=STATE_started
+	                                         CS=STATE_connected
+	                                         SS=STATE_established
+	                                         VS=STATE_high_quality
+	                                         AB=Ethernet
+	                                         IP=192.168.128.37
+	                                         FI=146308
+	                                         FO=146302
+	                                         FD=6
+	                                         CPU Usage: 55%
+	                                         Up Time: 14496
+	                                         % Mem Used(sys):39.07781
+	                                         Mem Used(sys):  411009024
+	                                         Mem Free(sys):  640761856
+	                                         Mem Used(rlc):  48696
+	                                         Processes: 130  */
+
 const TimeStampLength = 22
 
 var cpuTemp *regexp.Regexp
@@ -79,7 +99,8 @@ func init() {
 	nullTime = time.Now()
 	cpuTemp = regexp.MustCompile("sensord.*temp1: (.*) C")
 	blankTimeStamp = strings.Repeat(" ", TimeStampLength)
-	gatheredStats = make([]*Series, Processes)
+	gatheredStats = make([]*Series, Processes+1)
+
 }
 
 func ValidItem(nm string) bool {
@@ -98,19 +119,41 @@ func ShowValidItems() {
 func Index(nm string) int {
 	for i, opt := range itemNames {
 		if nm == opt {
-			return i + 1
+			return i
 		}
 	}
-	return 0
+	return -1
 }
 
 func SetupStats(nm string) {
 	if ValidItem(nm) {
-		gatheredStats[Index(nm)] = New(nm)
+		idx := Index(nm)
+		gatheredStats[idx] = New(nm)
+		switch idx {
+		case FI:
+			gatheredStats[FI].Extractor = regexp.MustCompile("([0-9]+)")
+		case FO:
+			gatheredStats[FO].Extractor = regexp.MustCompile("([0-9]+)")
+		case FD:
+			gatheredStats[FD].Extractor = regexp.MustCompile("([0-9]+)")
+		case CPU_Usage:
+			gatheredStats[CPU_Usage].Extractor = regexp.MustCompile("([0-9]+)%")
+		case Up_Time:
+			gatheredStats[Up_Time].Extractor = regexp.MustCompile("([0-9]+)")
+		case Pct_Mem_Used_sys:
+			gatheredStats[Pct_Mem_Used_sys].Extractor = regexp.MustCompile("([0-9]+\\.[0-9]+)")
+		case Mem_Used_sys:
+			gatheredStats[Mem_Used_sys].Extractor = regexp.MustCompile("([0-9]+)")
+		case Mem_Free_sys:
+			gatheredStats[Mem_Free_sys].Extractor = regexp.MustCompile("([0-9]+)")
+		case Mem_Used_rlc:
+			gatheredStats[Mem_Used_rlc].Extractor = regexp.MustCompile("([0-9]+)")
+		case Processes:
+			gatheredStats[Processes].Extractor = regexp.MustCompile("([0-9]+)")
+		}
 	} else {
 		if nm == "CPUTemp" {
 			cpuTempStats = New("CPUTemp")
-			cpuTempStats.SetRange(75, 100)
 		}
 	}
 }
@@ -154,6 +197,15 @@ func ConnectionStatusDetailLine(line string) (bool, int, string) {
 	return false, 0, ""
 }
 
+func ExtractValue(valtype int, val string) float32 {
+	if gatheredStats[valtype].Extractor != nil {
+		extr := gatheredStats[valtype].Extractor.FindStringSubmatch(val)
+		vstr := extr[1]
+		val, _ := strconv.ParseFloat(vstr, 32)
+		return float32(val)
+	}
+	return -1.0
+}
 func AnalyzeFile(rdr io.Reader, base time.Time) {
 
 	var connectionStatus bool = false
@@ -169,14 +221,16 @@ func AnalyzeFile(rdr io.Reader, base time.Time) {
 		if connectionStatus {
 			found, valtype, valstr := ConnectionStatusDetailLine(line)
 			if found {
+				fmt.Printf("Found detail %d %s\n", valtype, valstr)
 				if gatheredStats[valtype] != nil {
 					tempSample.At = connectionStatusTime
-					val, _ := strconv.ParseFloat(valstr, 32)
-					tempSample.Value = float32(val)
+					//val, _ := strconv.Atoi(strings.TrimSpace(valstr))
+					//tempSample.Value = float32(val)
+					tempSample.Value = ExtractValue(valtype, strings.TrimSpace(valstr))
 					gatheredStats[valtype].Add(tempSample)
-				}
-				if Verbose {
-					fmt.Printf("Time %v : Type : %s Value %s\n", connectionStatusTime, itemStatusLine[valtype], valstr)
+					fmt.Printf("Time %v : Type : %s Value %s %f\n", connectionStatusTime, itemStatusLine[valtype], valstr, tempSample.Value)
+				} else {
+					fmt.Printf("Not gathering the value\n")
 				}
 			} else {
 				connectionStatus = false

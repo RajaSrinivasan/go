@@ -2,6 +2,7 @@ package logfiles
 
 import (
 	"fmt"
+	"regexp"
 	"time"
 )
 
@@ -13,17 +14,18 @@ type Sample struct {
 }
 
 type Series struct {
-	Name    string
-	Min     float64
-	Max     float64
-	Samples []Sample
+	Name      string
+	Min       float64
+	Max       float64
+	Extractor *regexp.Regexp
+	Samples   []Sample
 }
 
 func New(nm string) *Series {
 	var temp = new(Series)
 	temp.Name = nm
-	temp.Min = 0
-	temp.Max = 100
+	//temp.Min = 0
+	//temp.Max = 100
 	//temp.Samples = make([]Sample, MIN_SAMPLE_COUNT)
 	return temp
 }
