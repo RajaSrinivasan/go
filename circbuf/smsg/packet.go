@@ -30,6 +30,8 @@ var packetsReceived int
 var overheadBytes int
 var packetsDropped int
 
+var channel chan []byte
+
 func init() {
 	state = waiting
 	buffer = make([]byte, maxMessageSize)
@@ -79,6 +81,12 @@ func Add(b byte) error {
 				if msglen > 0 {
 					packetsReceived++
 					state = complete
+					if channel != nil {
+						if len(channel) < cap(channel) {
+							m, _ := Get()
+							channel <- m
+						}
+					}
 				} else {
 
 				}
@@ -129,4 +137,15 @@ func Get() ([]byte, error) {
 	default:
 		return make([]byte, 0), errors.New("message not available")
 	}
+}
+
+// SetupChannel creates a new channel to which packets are delivered when complete. The argument c
+// is the capacity of the channel. The packet channel is a singleton - with subsequent calls returning
+// the same channel
+func SetupChannel(c int) (chan []byte, error) {
+	if channel == nil {
+		channel = make(chan []byte, c)
+		return channel, nil
+	}
+	return channel, errors.New("previously created channel")
 }
