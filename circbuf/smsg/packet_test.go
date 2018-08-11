@@ -4,6 +4,7 @@ import (
 	"encoding/hex"
 	"fmt"
 	"testing"
+	"time"
 )
 
 func TestShowCounters(t *testing.T) {
@@ -46,7 +47,7 @@ func TestAdd(t *testing.T) {
 }
 
 func TestGet(t *testing.T) {
-	fmt.Printf("Get msg")
+	t.Log("Get msg")
 	resetCounters()
 	for i := 0; i < 5; i++ {
 		Add(0x55)
@@ -66,4 +67,41 @@ func TestGet(t *testing.T) {
 		return
 	}
 	fmt.Printf("Message Length %d %s\n", len(msg), hex.EncodeToString(msg))
+}
+
+func generatePacket(s string) {
+	fmt.Printf("sending Packet %s\n", s)
+	msgbytes := []byte(s)
+	Add(startOfMessage)
+	for _, b := range msgbytes {
+		Add(b)
+	}
+	Add(startOfMessage)
+	ShowCounters()
+}
+
+func generateDataStream() {
+	for m := 0; m < 5; m++ {
+		msg := fmt.Sprintf("Test Message %d\n", m)
+		generatePacket(msg)
+		time.Sleep(time.Second)
+	}
+	generatePacket("quit")
+	time.Sleep(5 * time.Second)
+}
+
+func TestChannels(t *testing.T) {
+	t.Logf("Test the channel interface")
+	resetCounters()
+	ch, _ := SetupChannel(1)
+	go generateDataStream()
+	for msgno := 0; ; msgno++ {
+		//time.Sleep(2 * time.Second)
+		msg := <-ch
+		if "quit" == string(msg[:]) {
+			return
+		}
+		fmt.Printf("Received %s\n", string(msg[:]))
+		ShowCounters()
+	}
 }
