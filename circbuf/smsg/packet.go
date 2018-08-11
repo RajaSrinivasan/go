@@ -3,6 +3,8 @@ package smsg
 import (
 	"errors"
 	"fmt"
+
+	"../crc16"
 )
 
 const startOfMessage = 0x55
@@ -81,6 +83,10 @@ func Add(b byte) error {
 				if msglen > 0 {
 					packetsReceived++
 					state = complete
+					var pktcrc uint16
+					pktcrc = crc16.Update(pktcrc, buffer[:msglen-2])
+					fmt.Printf("Packet crc is %04x\n", pktcrc)
+					fmt.Printf("Received CRC is %02x%02x\n", buffer[msglen-2], buffer[msglen-1])
 					if channel != nil {
 						if len(channel) < cap(channel) {
 							m, _ := Get()
@@ -130,8 +136,8 @@ func Get() ([]byte, error) {
 	switch state {
 	case complete:
 		state = waiting
-		temp := make([]byte, msglen)
-		copy(temp, buffer)
+		temp := make([]byte, msglen-2)
+		copy(temp, buffer[:msglen-2])
 		msglen = 0
 		return temp, nil
 	default:

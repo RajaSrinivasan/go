@@ -5,6 +5,10 @@ import (
 	"fmt"
 	"testing"
 	"time"
+
+	"encoding/binary"
+
+	"../crc16"
 )
 
 func TestShowCounters(t *testing.T) {
@@ -71,11 +75,17 @@ func TestGet(t *testing.T) {
 
 func generatePacket(s string) {
 	fmt.Printf("sending Packet %s\n", s)
+	var pktcrc uint16
 	msgbytes := []byte(s)
 	Add(startOfMessage)
 	for _, b := range msgbytes {
 		Add(b)
+		pktcrc = crc16.UpdateCRC(pktcrc, b)
 	}
+	crcbytes := make([]byte, 2)
+	binary.BigEndian.PutUint16(crcbytes, pktcrc)
+	Add(crcbytes[0])
+	Add(crcbytes[1])
 	Add(startOfMessage)
 	ShowCounters()
 }
