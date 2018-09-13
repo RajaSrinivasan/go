@@ -17,22 +17,11 @@ func test(n int) {
 	fmt.Printf("Prime ? %d = %v\n", n, numlib.Prime(n))
 	fmt.Printf("Perfect ? %d = %v\n", n, numlib.Perfect(n))
 	fmt.Printf("Harshad ? %d = %v\n", n, numlib.Harshad(n))
+	fmt.Printf("Happy ? %d = %v\n", n, numlib.Happy(n))
+	fmt.Printf("Happier ? %d = %v\n", n, numlib.Happier(n))
 }
 
-func main() {
-
-	flag.Parse()
-	for i := 0; i < flag.NArg(); i++ {
-		val, _ := strconv.Atoi(flag.Arg(i))
-		test(val)
-	}
-
-	for i := 0; i < flag.NArg()-1; i++ {
-		num1, _ := strconv.Atoi(flag.Arg(i))
-		num2, _ := strconv.Atoi(flag.Arg(i + 1))
-		fmt.Printf("GCD of %d and %d is %d\n", num1, num2, numlib.Gcd(num1, num2))
-	}
-
+func enumerate() {
 	longest := 3
 	var N1 int
 	var N2 int
@@ -49,6 +38,20 @@ func main() {
 			}
 		}
 		fmt.Printf("%d %d %d %d\n", N1, N2, longest, N2-N1)
+	}
+}
+func main() {
+
+	flag.Parse()
+	for i := 0; i < flag.NArg(); i++ {
+		val, _ := strconv.Atoi(flag.Arg(i))
+		test(val)
+	}
+
+	for i := 0; i < flag.NArg()-1; i++ {
+		num1, _ := strconv.Atoi(flag.Arg(i))
+		num2, _ := strconv.Atoi(flag.Arg(i + 1))
+		fmt.Printf("GCD of %d and %d is %d\n", num1, num2, numlib.Gcd(num1, num2))
 	}
 
 }

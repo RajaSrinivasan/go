@@ -39,6 +39,14 @@ func SumOf(input []int) int {
 	return result
 }
 
+func SumSqOf(input []int) int {
+	result := 0
+	for _, val := range input {
+		result += val * val
+	}
+	return result
+}
+
 func ProductOf(input []int) int {
 	result := 0
 	for _, val := range input {
@@ -127,6 +135,44 @@ func Harshad(n int) bool {
 	sumds := SumOf(ds)
 	if n%sumds == 0 {
 		return true
+	}
+	return false
+}
+
+func Happy(n int) bool {
+	var seen [1000]bool
+
+	numnow := n
+	for attempt := 0; attempt < 1000; attempt = attempt + 1 {
+		ds := DigitsOf(numnow)
+		numnow = SumSqOf(ds)
+		fmt.Printf("%04d : %d\n", attempt, numnow)
+		if numnow == 1 {
+			return true
+		}
+		if seen[numnow] {
+			return false
+		}
+		seen[numnow] = true
+	}
+	return false
+}
+
+func Happier(n int) bool {
+	var seen [1000]bool
+
+	numnow := n
+	for attempt := 0; attempt < 1000; attempt = attempt + 1 {
+		ds := DigitsOf(numnow)
+		numnow = SumSqOf(ds)
+		fmt.Printf("%04d : %d\n", attempt, numnow)
+		if numnow == n {
+			return true
+		}
+		if seen[numnow] {
+			return false
+		}
+		seen[numnow] = true
 	}
 	return false
 }
