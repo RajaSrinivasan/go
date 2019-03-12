@@ -113,6 +113,25 @@ func FactorsOf(n int) []int {
 	return result
 }
 
+func Fibonacci() []int {
+	nl := list.New()
+	f0 := 0
+	nl.PushBack(f0)
+	f1 := 1
+	nl.PushBack(f1)
+	for {
+		f2 := f1 + f0
+		if f2 < f1 {
+			break
+		}
+		nl.PushBack(f2)
+		f0 = f1
+		f1 = f2
+	}
+	result := Convert(nl)
+	return result
+}
+
 func Prime(n int) bool {
 	f := FactorsOf(n)
 	if len(f) == 2 {

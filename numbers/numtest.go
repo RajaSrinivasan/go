@@ -8,17 +8,21 @@ import (
 	"./numlib"
 )
 
+var fibonacci bool
+
 func test(n int) {
-	fmt.Printf("------------------------------Testing %d\n", n)
-	fmt.Printf("Digits of %d = %v\n", n, numlib.DigitsOf(n))
-	fmt.Printf("Value of %v = %d\n", numlib.DigitsOf(n), numlib.DecimalValueOf(numlib.DigitsOf(n)))
-	fmt.Printf("Divisors of %d = %v\n", n, numlib.DivisorsOf(n))
-	fmt.Printf("Factors of %d = %v\n", n, numlib.FactorsOf(n))
-	fmt.Printf("Prime ? %d = %v\n", n, numlib.Prime(n))
-	fmt.Printf("Perfect ? %d = %v\n", n, numlib.Perfect(n))
-	fmt.Printf("Harshad ? %d = %v\n", n, numlib.Harshad(n))
-	fmt.Printf("Happy ? %d = %v\n", n, numlib.Happy(n))
-	fmt.Printf("Happier ? %d = %v\n", n, numlib.Happier(n))
+	if n > 0 {
+		fmt.Printf("------------------------------Testing %d\n", n)
+		fmt.Printf("Digits of %d = %v\n", n, numlib.DigitsOf(n))
+		fmt.Printf("Value of %v = %d\n", numlib.DigitsOf(n), numlib.DecimalValueOf(numlib.DigitsOf(n)))
+		fmt.Printf("Divisors of %d = %v\n", n, numlib.DivisorsOf(n))
+		fmt.Printf("Factors of %d = %v\n", n, numlib.FactorsOf(n))
+		fmt.Printf("Prime ? %d = %v\n", n, numlib.Prime(n))
+		fmt.Printf("Perfect ? %d = %v\n", n, numlib.Perfect(n))
+		fmt.Printf("Harshad ? %d = %v\n", n, numlib.Harshad(n))
+		fmt.Printf("Happy ? %d = %v\n", n, numlib.Happy(n))
+		fmt.Printf("Happier ? %d = %v\n", n, numlib.Happier(n))
+	}
 }
 
 func enumerate() {
@@ -40,9 +44,21 @@ func enumerate() {
 		fmt.Printf("%d %d %d %d\n", N1, N2, longest, N2-N1)
 	}
 }
-func main() {
 
+func exec_fibonacci_tests() {
+	fl := numlib.Fibonacci()
+	for idx, val := range fl {
+		fmt.Printf("%4d : %d\n", idx, val)
+		test(val)
+	}
+}
+
+func main() {
+	flag.BoolVar(&fibonacci, "fibonacci", false, "fibonacci tests")
 	flag.Parse()
+	if fibonacci {
+		exec_fibonacci_tests()
+	}
 	for i := 0; i < flag.NArg(); i++ {
 		val, _ := strconv.Atoi(flag.Arg(i))
 		test(val)
