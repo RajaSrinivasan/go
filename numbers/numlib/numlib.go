@@ -92,7 +92,7 @@ func DivisorsOf(n int) []int {
 }
 
 func FactorsOf(n int) []int {
-	nsqrt := int(math.Sqrt(float64(n)))
+	nsqrt := int(math.Sqrt(float64(n))) + 1
 	nl := list.New()
 	nl.PushFront(1)
 	tempn := n
@@ -107,7 +107,9 @@ func FactorsOf(n int) []int {
 			d++
 		}
 	}
-	nl.PushBack(n)
+	if tempn != 1 {
+		nl.PushBack(tempn)
+	}
 	result := Convert(nl)
 	sort.Ints(result)
 	return result
@@ -133,7 +135,7 @@ func Fibonacci() []int {
 }
 
 func Prime(n int) bool {
-	f := FactorsOf(n)
+	f := DivisorsOf(n)
 	if len(f) == 2 {
 		return true
 	}

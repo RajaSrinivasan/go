@@ -48,8 +48,7 @@ func enumerate() {
 func exec_fibonacci_tests() {
 	fl := numlib.Fibonacci()
 	for idx, val := range fl {
-		fmt.Printf("%4d : %d\n", idx, val)
-		test(val)
+		fmt.Printf("%4d : %d Prime ? = %v\n", idx, val, numlib.Prime(val))
 	}
 }
 
