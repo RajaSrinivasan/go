@@ -186,7 +186,7 @@ func Happier(n int) bool {
 	for attempt := 0; attempt < 1000; attempt = attempt + 1 {
 		ds := DigitsOf(numnow)
 		numnow = SumSqOf(ds)
-		fmt.Printf("%04d : %d\n", attempt, numnow)
+		//fmt.Printf("%04d : %d\n", attempt, numnow)
 		if numnow == n {
 			return true
 		}
