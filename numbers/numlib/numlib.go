@@ -20,7 +20,13 @@ func Print(nm string, diglist *list.List) {
 	}
 	fmt.Println("")
 }
+func PrintArr(nm string, digs []int) {
 
+	fmt.Println(nm)
+	for idx, val := range digs {
+		fmt.Printf("%d : %d\n", idx, val)
+	}
+}
 func Convert(L *list.List) []int {
 	result := make([]int, L.Len())
 	elem := L.Front()
@@ -112,6 +118,43 @@ func FactorsOf(n int) []int {
 	}
 	result := Convert(nl)
 	sort.Ints(result)
+	return result
+}
+
+func Square(x int) int {
+	return x * x
+}
+
+func Cube(x int) int {
+	return x * x * x
+}
+
+func Power(x int, p int) int {
+	v := x
+	for {
+		v = v * x
+		p--
+		if p == 1 {
+			break
+		}
+	}
+	return v
+}
+
+func Powers(p int) []int {
+	nl := list.New()
+	n := 0
+	lp := 0
+	for {
+		n++
+		pn := Power(n, p)
+		if lp > pn {
+			break
+		}
+		nl.PushBack(pn)
+		lp = pn
+	}
+	result := Convert(nl)
 	return result
 }
 
