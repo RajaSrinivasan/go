@@ -69,8 +69,8 @@ func TaxiCabNumbers(max int) []TaxicabNumber {
 				tcNum.SC1 = sumCubes[idx]
 				tcNum.SC2 = sumCube
 				taxCabs = append(taxCabs, tcNum)
-				fmt.Printf("Found Taxicab no %d) %d ", len(taxCabs), sumCube.Sum)
-				PrintTaxicabNumber(tcNum)
+				//fmt.Printf("%5d) %10d ", len(taxCabs), sumCube.Sum)
+				//PrintTaxicabNumber(tcNum)
 			} else {
 				sumCubes = append(sumCubes, sumCube)
 			}
@@ -79,18 +79,19 @@ func TaxiCabNumbers(max int) []TaxicabNumber {
 	return taxCabs
 }
 func showSumCube(sc SumCube) {
-	fmt.Printf(" [( %d , %d) , ( %d , %d)] ", sc.P1.N1, sc.P1.N2, sc.P2.N1, sc.P2.N2)
+	fmt.Printf(" : %10d , %10d | %10d , %10d || ", sc.P1.N1, sc.P1.N2, sc.P2.N1, sc.P2.N2)
 }
 
 func PrintTaxicabNumber(tcNum TaxicabNumber) {
-	fmt.Printf("%d = ", tcNum.SC1.Sum)
+	//fmt.Printf("%10d = ", tcNum.SC1.Sum)
 	showSumCube(tcNum.SC1)
 	showSumCube(tcNum.SC2)
 	fmt.Println()
 }
 func PrintTaxicabNumbers(tc []TaxicabNumber) {
 	for idx, tcNum := range tc {
-		fmt.Printf("%d) ", idx)
+		fmt.Printf("%4d) ", idx)
+		fmt.Printf("%10d || ", tcNum.SC1.Sum)
 		PrintTaxicabNumber(tcNum)
 	}
 }
