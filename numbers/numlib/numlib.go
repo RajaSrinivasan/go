@@ -130,12 +130,32 @@ func Cube(x int) int {
 }
 
 func Power(x int, p int) int {
-	v := x
-	for {
-		v = v * x
-		p--
-		if p == 1 {
-			break
+	var v int
+	switch p {
+	case 2:
+		return Square(x)
+	case 3:
+		return Cube(x)
+	case 4:
+		return Square(Square(x))
+	case 5:
+		return Cube(x) * Square(x)
+	case 6:
+		return Square(Cube(x))
+	case 7:
+		return Square(Cube(x)) * x
+	case 8:
+		return Cube(Square(x)) * Square(x)
+	case 9:
+		return Cube(Cube(x))
+	default:
+		v = x
+		for {
+			v = v * x
+			p--
+			if p == 1 {
+				break
+			}
 		}
 	}
 	return v

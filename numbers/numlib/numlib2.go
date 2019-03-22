@@ -78,6 +78,37 @@ func TaxiCabNumbers(max int) []TaxicabNumber {
 	}
 	return taxCabs
 }
+
+func TaxiCabNumbersOrder(max int, order int) []TaxicabNumber {
+	var sumCube SumCube
+	var tcNum TaxicabNumber
+	sumCubes := make([]SumCube, 1024)
+	taxCabs := make([]TaxicabNumber, 0)
+
+	maxNo := int(math.Pow(float64(math.MaxInt64), 1.0/3.0))
+	maxNo = 1000
+	for n1 := 1; n1 < maxNo && len(taxCabs) < max; n1++ {
+		n1cube := Power(n1, order)
+		for n2 := 1; n2 < n1 && len(taxCabs) < max; n2++ {
+			n2cube := Power(n2, order)
+			sumCube.Sum = n1cube + n2cube
+			sumCube.P1 = NumPair{n1, n1cube}
+			sumCube.P2 = NumPair{n2, n2cube}
+			status, idx := find(sumCubes, sumCube.Sum)
+			if status {
+				tcNum.SC1 = sumCubes[idx]
+				tcNum.SC2 = sumCube
+				taxCabs = append(taxCabs, tcNum)
+				//fmt.Printf("%5d) %10d ", len(taxCabs), sumCube.Sum)
+				//PrintTaxicabNumber(tcNum)
+			} else {
+				sumCubes = append(sumCubes, sumCube)
+			}
+		}
+	}
+	return taxCabs
+}
+
 func showSumCube(sc SumCube) {
 	fmt.Printf(" : %10d , %10d | %10d , %10d || ", sc.P1.N1, sc.P1.N2, sc.P2.N1, sc.P2.N2)
 }

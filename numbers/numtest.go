@@ -9,6 +9,7 @@ import (
 )
 
 var fibonacci bool
+var taxicab bool
 
 func test(n int) {
 	if n > 0 {
@@ -52,12 +53,26 @@ func exec_fibonacci_tests() {
 	}
 }
 
+func exec_taxicabnumbers_tests() {
+	tcnums := numlib.TaxiCabNumbers(128)
+	numlib.PrintTaxicabNumbers(tcnums)
+	fmt.Println("---------------------------------------")
+	tcnums = numlib.TaxiCabNumbersOrder(64, 4)
+	fmt.Println("---------------------------------------")
+	numlib.PrintTaxicabNumbers(tcnums)
+}
+
 func main() {
 	flag.BoolVar(&fibonacci, "fibonacci", false, "fibonacci tests")
+	flag.BoolVar(&taxicab, "taxicab", false, "taxicab numbers tests")
 	flag.Parse()
 	if fibonacci {
 		exec_fibonacci_tests()
 	}
+	if taxicab {
+		exec_taxicabnumbers_tests()
+	}
+
 	for i := 0; i < flag.NArg(); i++ {
 		val, _ := strconv.Atoi(flag.Arg(i))
 		test(val)

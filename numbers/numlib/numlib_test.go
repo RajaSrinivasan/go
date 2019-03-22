@@ -36,6 +36,17 @@ func TestPrintSumCube(t *testing.T) {
 	showSumCube(sc)
 }
 
+func TestPowers(t *testing.T) {
+
+	for i := 10; i < 20; i++ {
+		fmt.Printf("%4d ", i)
+		for p := 2; p < 9; p++ {
+			fmt.Printf(" %15d ", Power(i, p))
+		}
+		fmt.Println()
+	}
+}
+
 func TestPrintTaxicabNumbers(t *testing.T) {
 	var sc SumCube
 	sc.P1 = NumPair{5, Cube(5)}
@@ -56,5 +67,10 @@ func TestPrintTaxicabNumbers(t *testing.T) {
 
 func TestTaxicabNumbers(t *testing.T) {
 	tcnums := TaxiCabNumbers(128)
+	PrintTaxicabNumbers(tcnums)
+}
+
+func TestTaxicabNumbersOrder(t *testing.T) {
+	tcnums := TaxiCabNumbersOrder(128, 4)
 	PrintTaxicabNumbers(tcnums)
 }
