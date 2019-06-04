@@ -5,7 +5,7 @@ import (
 
 	"./apmlib"
 )
-
+// Demo feature
 func main() {
 
 	fmt.Printf("Hello pass %s\n", apmlib.CryptPassphrase())
